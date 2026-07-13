@@ -1,3 +1,13 @@
+---
+title: Coloured Object Detector
+emoji: 🟡
+colorFrom: yellow
+colorTo: gray
+sdk: docker
+app_port: 8000
+pinned: false
+---
+
 # Coloured Object Detector
 
 A web application that finds objects of a chosen colour in images, uploaded
@@ -23,6 +33,7 @@ network, and when does it fall apart?
 - [API](#api)
 - [Benchmark](#benchmark)
 - [Tests](#tests)
+- [Docker and deployment](#docker-and-deployment)
 - [Known limitations](#known-limitations)
 
 ## How detection works
@@ -251,6 +262,27 @@ development (object fragmentation, muted colours misread as grey, dark red
 misread as black), and the fusion matcher's buckets and false-positive
 suppression. The fusion tests use fabricated detections, so the suite runs in
 about a second with no model download.
+
+## Docker and deployment
+
+```
+docker build -t color-detector .
+docker run -p 8000:8000 color-detector
+```
+
+The image uses CPU-only PyTorch (the default Linux wheel bundles CUDA and
+inflates the image by several gigabytes) and bakes the YOLO weights in at
+build time so the first request does not wait on a download. The server
+honours a `PORT` environment variable, which is what most hosts set.
+
+To deploy on Hugging Face Spaces: create a Space with the Docker SDK, push
+this repository to it, and it builds and serves automatically. Render and
+Fly.io work the same way from the Dockerfile. Note that the camera tab
+requires HTTPS in production — browsers only allow `getUserMedia` on secure
+origins — which all of the hosts above provide by default.
+
+The video tab is CPU-heavy; on free tiers expect uploads near the 60-second
+cap to process slowly, especially in ml or fusion mode.
 
 ## Known limitations
 

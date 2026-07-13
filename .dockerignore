@@ -1,0 +1,15 @@
+# VCS and caches
+.git
+__pycache__
+*.pyc
+.pytest_cache
+
+# Local model weights (baked fresh during the image build)
+*.pt
+
+# Benchmark images are bulky and not needed at runtime
+benchmark/images
+
+# Local environment
+.venv
+venv
