@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# Model weights (auto-downloaded by ultralytics on first run)
+*.pt
+
+# Benchmark images are bulky and re-downloadable via benchmark/collect_images.py.
+# Annotations (the hand-labeled ground truth) and results ARE tracked.
+benchmark/images/
+
+# OS noise
+Thumbs.db
+.DS_Store

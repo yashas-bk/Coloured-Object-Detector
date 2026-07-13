@@ -1,0 +1,269 @@
+{
+  "image": "coco__field_marshall_tractor_green_rosudgeon_vintage_rally_cornwal.jpg",
+  "draft": true,
+  "tags": [
+    "outdoor"
+  ],
+  "objects": [
+    {
+      "box": [
+        15,
+        327,
+        76,
+        135
+      ],
+      "color": "red",
+      "coco": true
+    },
+    {
+      "box": [
+        259,
+        350,
+        42,
+        36
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        1251,
+        439,
+        29,
+        63
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        977,
+        871,
+        68,
+        70
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        1103,
+        344,
+        78,
+        56
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        411,
+        40,
+        45
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        1012,
+        321,
+        83,
+        80
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        718,
+        0,
+        562,
+        286
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        1046,
+        310,
+        234,
+        190
+      ],
+      "color": "brown",
+      "coco": true
+    },
+    {
+      "box": [
+        35,
+        431,
+        47,
+        26
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        600,
+        749,
+        58,
+        59
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        104,
+        436,
+        205
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        348,
+        385,
+        35,
+        99
+      ],
+      "color": "cyan",
+      "coco": false
+    },
+    {
+      "box": [
+        15,
+        327,
+        76,
+        135
+      ],
+      "color": "blue",
+      "coco": true
+    },
+    {
+      "box": [
+        1046,
+        310,
+        234,
+        190
+      ],
+      "color": "blue",
+      "coco": true
+    },
+    {
+      "box": [
+        1031,
+        834,
+        181,
+        107
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        1234,
+        840,
+        46,
+        26
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        203,
+        331,
+        123,
+        77
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        106,
+        340,
+        49,
+        111
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        15,
+        327,
+        76,
+        135
+      ],
+      "color": "pink",
+      "coco": true
+    },
+    {
+      "box": [
+        292,
+        236,
+        797,
+        636
+      ],
+      "color": "white",
+      "coco": true
+    },
+    {
+      "box": [
+        0,
+        0,
+        732,
+        236
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        1157,
+        627,
+        123,
+        89
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        92,
+        310,
+        72,
+        151
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        292,
+        236,
+        797,
+        636
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        1046,
+        310,
+        234,
+        190
+      ],
+      "color": "black",
+      "coco": true
+    }
+  ]
+}

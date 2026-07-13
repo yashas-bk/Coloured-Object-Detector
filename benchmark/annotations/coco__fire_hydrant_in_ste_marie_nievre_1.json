@@ -1,0 +1,39 @@
+{
+  "image": "coco__fire_hydrant_in_ste_marie_nievre_1.jpg",
+  "draft": true,
+  "tags": [
+    "outdoor"
+  ],
+  "objects": [
+    {
+      "box": [
+        469,
+        270,
+        337,
+        744
+      ],
+      "color": "red",
+      "coco": true
+    },
+    {
+      "box": [
+        1196,
+        1239,
+        47,
+        28
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        469,
+        270,
+        337,
+        744
+      ],
+      "color": "pink",
+      "coco": true
+    }
+  ]
+}

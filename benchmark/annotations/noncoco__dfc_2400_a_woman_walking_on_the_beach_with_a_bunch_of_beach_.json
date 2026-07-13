@@ -1,0 +1,97 @@
+{
+  "image": "noncoco__dfc_2400_a_woman_walking_on_the_beach_with_a_bunch_of_beach_.jpg",
+  "draft": true,
+  "tags": [],
+  "objects": [
+    {
+      "box": [
+        916,
+        397,
+        27,
+        48
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        822,
+        599,
+        28,
+        35
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        791,
+        333,
+        25,
+        64
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        830,
+        433,
+        85,
+        56
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        823,
+        643,
+        49,
+        40
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        825,
+        531,
+        55,
+        24
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        661,
+        479,
+        30,
+        35
+      ],
+      "color": "purple",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        0,
+        1280,
+        228
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        596,
+        145,
+        264,
+        547
+      ],
+      "color": "black",
+      "coco": true
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "image": "coco__basket_flowers_1622.jpg",
+  "draft": true,
+  "tags": [
+    "outdoor"
+  ],
+  "objects": [
+    {
+      "box": [
+        1063,
+        572,
+        157,
+        149
+      ],
+      "color": "red",
+      "coco": true
+    },
+    {
+      "box": [
+        1106,
+        844,
+        125,
+        69
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        64,
+        395,
+        154,
+        169
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        799,
+        397,
+        28,
+        41
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        978,
+        665,
+        178,
+        165
+      ],
+      "color": "yellow",
+      "coco": true
+    },
+    {
+      "box": [
+        500,
+        420,
+        48,
+        44
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        774,
+        679,
+        318,
+        219
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        579,
+        571,
+        44,
+        45
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        978,
+        665,
+        178,
+        165
+      ],
+      "color": "brown",
+      "coco": true
+    },
+    {
+      "box": [
+        1063,
+        572,
+        157,
+        149
+      ],
+      "color": "brown",
+      "coco": true
+    },
+    {
+      "box": [
+        584,
+        544,
+        43,
+        51
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        597,
+        362,
+        118,
+        194
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        341,
+        440,
+        126,
+        115
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        978,
+        665,
+        178,
+        165
+      ],
+      "color": "black",
+      "coco": true
+    }
+  ]
+}

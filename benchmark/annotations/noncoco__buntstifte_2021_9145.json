@@ -1,0 +1,57 @@
+{
+  "image": "noncoco__buntstifte_2021_9145.jpg",
+  "draft": true,
+  "tags": [],
+  "objects": [
+    {
+      "box": [
+        179,
+        350,
+        147,
+        103
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        254,
+        224,
+        1026,
+        376
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        330,
+        417,
+        117,
+        52
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        461,
+        498,
+        198,
+        87
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        389,
+        464,
+        104,
+        48
+      ],
+      "color": "purple",
+      "coco": false
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "image": "noncoco__mailbox_in_general_post_office.jpg",
+  "draft": true,
+  "tags": [],
+  "objects": [
+    {
+      "box": [
+        501,
+        885,
+        279,
+        275
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        577,
+        720,
+        172,
+        106
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        401,
+        899,
+        72,
+        235
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        454,
+        441,
+        82,
+        215
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        437,
+        687,
+        54,
+        136
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        573,
+        136,
+        56,
+        143
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        314,
+        1022,
+        85,
+        79
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        221,
+        1218,
+        167,
+        27
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        451,
+        426,
+        286,
+        402
+      ],
+      "color": "pink",
+      "coco": false
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+opencv-python
+numpy
+fastapi
+uvicorn[standard]
+python-multipart
+imageio-ffmpeg
+ultralytics
+requests
+pytest

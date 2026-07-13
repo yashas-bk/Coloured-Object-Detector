@@ -1,0 +1,139 @@
+{
+  "image": "dim__bombardier_r62a_1_train_arriving_into_207th_street_november_.jpg",
+  "draft": true,
+  "tags": [
+    "dim-light"
+  ],
+  "objects": [
+    {
+      "box": [
+        330,
+        382,
+        63,
+        64
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        318,
+        553,
+        37,
+        28
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        130,
+        547,
+        36,
+        31
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        595,
+        0,
+        363,
+        46
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        1060,
+        0,
+        220,
+        100
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        592,
+        0,
+        392,
+        53
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        0,
+        420,
+        69
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        121,
+        533,
+        55,
+        53
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        312,
+        536,
+        54,
+        55
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        796,
+        401,
+        72,
+        20
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        426,
+        365,
+        321,
+        171
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        103,
+        376,
+        60,
+        80
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        39,
+        269,
+        1158,
+        481
+      ],
+      "color": "black",
+      "coco": true
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "image": "coco__bowl_of_peaches_with_orange_accent.jpg",
+  "draft": true,
+  "tags": [
+    "outdoor"
+  ],
+  "objects": [
+    {
+      "box": [
+        49,
+        42,
+        1228,
+        918
+      ],
+      "color": "red",
+      "coco": true
+    },
+    {
+      "box": [
+        589,
+        298,
+        594,
+        452
+      ],
+      "color": "red",
+      "coco": true
+    },
+    {
+      "box": [
+        548,
+        147,
+        433,
+        285
+      ],
+      "color": "red",
+      "coco": true
+    },
+    {
+      "box": [
+        587,
+        295,
+        584,
+        456
+      ],
+      "color": "red",
+      "coco": true
+    },
+    {
+      "box": [
+        613,
+        602,
+        104,
+        149
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        910,
+        333,
+        58,
+        44
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        494,
+        355,
+        124,
+        153
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        59,
+        182,
+        582,
+        534
+      ],
+      "color": "brown",
+      "coco": true
+    },
+    {
+      "box": [
+        548,
+        147,
+        433,
+        285
+      ],
+      "color": "white",
+      "coco": true
+    },
+    {
+      "box": [
+        766,
+        0,
+        127,
+        69
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        0,
+        136,
+        29
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        1005,
+        0,
+        183,
+        90
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        187,
+        0,
+        191,
+        31
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        627,
+        388,
+        27,
+        48
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        1209,
+        0,
+        71,
+        102
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        985,
+        795,
+        295,
+        165
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        727,
+        347,
+        233
+      ],
+      "color": "black",
+      "coco": false
+    }
+  ]
+}

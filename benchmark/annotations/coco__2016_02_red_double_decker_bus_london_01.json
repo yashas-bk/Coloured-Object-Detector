@@ -1,0 +1,279 @@
+{
+  "image": "coco__2016_02_red_double_decker_bus_london_01.jpg",
+  "draft": true,
+  "tags": [
+    "outdoor"
+  ],
+  "objects": [
+    {
+      "box": [
+        282,
+        579,
+        23,
+        48
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        763,
+        250,
+        229,
+        37
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        618,
+        227,
+        61,
+        27
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        764,
+        745,
+        32,
+        34
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        1187,
+        0,
+        25,
+        57
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        1020,
+        0,
+        18,
+        120
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        1094,
+        0,
+        20,
+        105
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        756,
+        823,
+        75,
+        30
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        40,
+        546,
+        56,
+        30
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        35,
+        528,
+        27,
+        26
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        965,
+        434,
+        42,
+        29
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        791,
+        418,
+        141,
+        67
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        283,
+        499,
+        33,
+        33
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        550,
+        518,
+        109,
+        17
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        821,
+        602,
+        56,
+        83
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        819,
+        604,
+        52,
+        169
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        820,
+        372,
+        67,
+        106
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        961,
+        431,
+        44,
+        36
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        812,
+        431,
+        115,
+        21
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        443,
+        684,
+        51,
+        55
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        745,
+        544,
+        53,
+        57
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        521,
+        229,
+        545,
+        566
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        170,
+        393,
+        188,
+        307
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        0,
+        564,
+        86,
+        108
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        1151,
+        573,
+        47,
+        168
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        1211,
+        553,
+        58,
+        233
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        1096,
+        558,
+        56,
+        214
+      ],
+      "color": "black",
+      "coco": true
+    }
+  ]
+}

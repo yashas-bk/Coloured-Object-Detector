@@ -1,0 +1,229 @@
+{
+  "image": "dim__36th_street_southbound_bmt_fourth_avenue_line_platform_decem.jpg",
+  "draft": true,
+  "tags": [
+    "dim-light"
+  ],
+  "objects": [
+    {
+      "box": [
+        91,
+        488,
+        43,
+        15
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        117,
+        649,
+        21,
+        148
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        102,
+        880,
+        45,
+        43
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        36,
+        233,
+        64,
+        34
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        785,
+        457,
+        26,
+        28
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        665,
+        718,
+        48,
+        28
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        103,
+        782,
+        120,
+        70
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        311,
+        472,
+        84,
+        225
+      ],
+      "color": "brown",
+      "coco": true
+    },
+    {
+      "box": [
+        0,
+        296,
+        226,
+        642
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        814,
+        72,
+        60
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        575,
+        403,
+        253,
+        219
+      ],
+      "color": "white",
+      "coco": true
+    },
+    {
+      "box": [
+        221,
+        454,
+        101,
+        319
+      ],
+      "color": "white",
+      "coco": true
+    },
+    {
+      "box": [
+        357,
+        536,
+        47,
+        47
+      ],
+      "color": "white",
+      "coco": true
+    },
+    {
+      "box": [
+        480,
+        508,
+        150,
+        336
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        872,
+        417,
+        408,
+        395
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        451,
+        124,
+        110
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        792,
+        159,
+        128
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        575,
+        403,
+        253,
+        219
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        521,
+        456,
+        40,
+        92
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        221,
+        454,
+        101,
+        319
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        441,
+        447,
+        51,
+        166
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        78,
+        807,
+        53,
+        34
+      ],
+      "color": "black",
+      "coco": false
+    }
+  ]
+}

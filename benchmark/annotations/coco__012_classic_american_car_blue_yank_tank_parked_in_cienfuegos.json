@@ -1,0 +1,256 @@
+{
+  "image": "coco__012_classic_american_car_blue_yank_tank_parked_in_cienfuegos.jpg",
+  "tags": [],
+  "objects": [
+    {
+      "box": [
+        581,
+        85,
+        182,
+        29
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        395,
+        14,
+        94
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        379,
+        492,
+        53,
+        26
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        273,
+        17,
+        97
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        248,
+        245,
+        428,
+        316
+      ],
+      "color": "blue",
+      "coco": true
+    },
+    {
+      "box": [
+        986,
+        220,
+        293,
+        106
+      ],
+      "color": "blue",
+      "coco": true
+    },
+    {
+      "box": [
+        722,
+        135,
+        66,
+        66
+      ],
+      "color": "white",
+      "coco": true
+    },
+    {
+      "box": [
+        986,
+        220,
+        293,
+        106
+      ],
+      "color": "white",
+      "coco": true
+    },
+    {
+      "box": [
+        148,
+        350,
+        54,
+        46
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        663,
+        351,
+        254,
+        62
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        934,
+        653,
+        173,
+        186
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        946,
+        487,
+        148,
+        157
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        3,
+        207,
+        26,
+        169
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        124,
+        465,
+        15,
+        147
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        766,
+        421,
+        100,
+        34
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        173,
+        22,
+        181,
+        172
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        391,
+        23,
+        103,
+        164
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        500,
+        5,
+        145,
+        35
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        676,
+        4,
+        264,
+        77
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        767,
+        87,
+        188,
+        124
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        352,
+        1,
+        36,
+        250
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        645,
+        4,
+        15,
+        345
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        841,
+        1,
+        13,
+        357
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        964,
+        7,
+        16,
+        334
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        888,
+        215,
+        263,
+        62
+      ],
+      "color": "cyan",
+      "coco": false
+    }
+  ]
+}

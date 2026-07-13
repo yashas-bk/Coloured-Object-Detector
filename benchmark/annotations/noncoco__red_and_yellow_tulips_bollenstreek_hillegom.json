@@ -1,0 +1,117 @@
+{
+  "image": "noncoco__red_and_yellow_tulips_bollenstreek_hillegom.jpg",
+  "draft": true,
+  "tags": [],
+  "objects": [
+    {
+      "box": [
+        659,
+        898,
+        28,
+        47
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        980,
+        915,
+        27,
+        38
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        1078,
+        868,
+        60,
+        65
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        348,
+        964,
+        29
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        1152,
+        44,
+        128,
+        95
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        783,
+        0,
+        201,
+        124
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        0,
+        104,
+        48
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        1039,
+        934,
+        29,
+        40
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        217,
+        676,
+        34,
+        32
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        1238,
+        925,
+        42,
+        66
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        397,
+        880,
+        63,
+        111
+      ],
+      "color": "black",
+      "coco": false
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "image": "dim__a_foggy_morning_at_nomahegan_park_cranford_new_jersey.jpg",
+  "draft": true,
+  "tags": [
+    "dim-light"
+  ],
+  "objects": [
+    {
+      "box": [
+        561,
+        322,
+        56,
+        49
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        375,
+        293,
+        115,
+        82
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        634,
+        309,
+        100,
+        101
+      ],
+      "color": "yellow",
+      "coco": true
+    },
+    {
+      "box": [
+        524,
+        302,
+        24,
+        36
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        527,
+        433,
+        129,
+        13
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        515,
+        314,
+        141,
+        121
+      ],
+      "color": "brown",
+      "coco": true
+    },
+    {
+      "box": [
+        634,
+        309,
+        100,
+        101
+      ],
+      "color": "white",
+      "coco": true
+    },
+    {
+      "box": [
+        0,
+        0,
+        192,
+        208
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        258,
+        0,
+        81,
+        164
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        362,
+        0,
+        437,
+        261
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        515,
+        314,
+        141,
+        121
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        557,
+        462,
+        20,
+        69
+      ],
+      "color": "black",
+      "coco": false
+    }
+  ]
+}

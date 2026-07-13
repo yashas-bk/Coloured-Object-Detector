@@ -1,0 +1,87 @@
+{
+  "image": "noncoco__a_toppled_orange_traffic_cone_at_huntington_station.jpg",
+  "draft": true,
+  "tags": [],
+  "objects": [
+    {
+      "box": [
+        251,
+        128,
+        943,
+        727
+      ],
+      "color": "red",
+      "coco": true
+    },
+    {
+      "box": [
+        264,
+        130,
+        934,
+        727
+      ],
+      "color": "red",
+      "coco": true
+    },
+    {
+      "box": [
+        64,
+        487,
+        57,
+        40
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        1120,
+        133,
+        57,
+        600
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        281,
+        395,
+        811,
+        152
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        531,
+        67,
+        38
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        196,
+        946,
+        74,
+        14
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        717,
+        31,
+        42,
+        35
+      ],
+      "color": "black",
+      "coco": false
+    }
+  ]
+}

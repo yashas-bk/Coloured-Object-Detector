@@ -1,0 +1,136 @@
+{
+  "image": "coco__1957_volkswagen_beetle_export_model_in_front_of_porta_nigra_.jpg",
+  "tags": [],
+  "objects": [
+    {
+      "box": [
+        382,
+        733,
+        32,
+        28
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        655,
+        740,
+        41,
+        26
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        1080,
+        722,
+        200,
+        56
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        892,
+        642,
+        50,
+        35
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        1197,
+        389,
+        83,
+        274
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        70,
+        934,
+        162,
+        7
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        78,
+        489,
+        76,
+        85
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        198,
+        317,
+        136,
+        106
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        883,
+        724,
+        192,
+        78
+      ],
+      "color": "cyan",
+      "coco": true
+    },
+    {
+      "box": [
+        580,
+        597,
+        190,
+        112
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        302,
+        550,
+        226,
+        108
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        104,
+        795,
+        579,
+        70
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        444,
+        756,
+        403,
+        35
+      ],
+      "color": "green",
+      "coco": false
+    }
+  ]
+}

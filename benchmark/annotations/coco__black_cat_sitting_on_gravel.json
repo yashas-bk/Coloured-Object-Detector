@@ -1,0 +1,69 @@
+{
+  "image": "coco__black_cat_sitting_on_gravel.jpg",
+  "draft": true,
+  "tags": [
+    "outdoor"
+  ],
+  "objects": [
+    {
+      "box": [
+        822,
+        811,
+        33,
+        66
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        353,
+        916,
+        48,
+        40
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        433,
+        735,
+        38,
+        38
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        540,
+        217,
+        249,
+        252
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        349,
+        49,
+        677,
+        599
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        349,
+        52,
+        672,
+        596
+      ],
+      "color": "black",
+      "coco": true
+    }
+  ]
+}

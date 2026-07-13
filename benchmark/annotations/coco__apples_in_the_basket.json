@@ -1,0 +1,369 @@
+{
+  "image": "coco__apples_in_the_basket.jpg",
+  "draft": true,
+  "tags": [
+    "outdoor"
+  ],
+  "objects": [
+    {
+      "box": [
+        785,
+        722,
+        319,
+        237
+      ],
+      "color": "red",
+      "coco": true
+    },
+    {
+      "box": [
+        50,
+        410,
+        324,
+        310
+      ],
+      "color": "red",
+      "coco": true
+    },
+    {
+      "box": [
+        589,
+        347,
+        241,
+        231
+      ],
+      "color": "red",
+      "coco": true
+    },
+    {
+      "box": [
+        821,
+        489,
+        158,
+        199
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        556,
+        258,
+        195,
+        182
+      ],
+      "color": "red",
+      "coco": true
+    },
+    {
+      "box": [
+        1134,
+        0,
+        146,
+        97
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        288,
+        24,
+        122,
+        98
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        356,
+        327,
+        166,
+        114
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        579,
+        874,
+        50,
+        86
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        488,
+        461,
+        89,
+        133
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        785,
+        722,
+        319,
+        237
+      ],
+      "color": "yellow",
+      "coco": true
+    },
+    {
+      "box": [
+        556,
+        258,
+        195,
+        182
+      ],
+      "color": "yellow",
+      "coco": true
+    },
+    {
+      "box": [
+        805,
+        135,
+        212,
+        222
+      ],
+      "color": "yellow",
+      "coco": true
+    },
+    {
+      "box": [
+        257,
+        267,
+        80,
+        48
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        277,
+        0,
+        237,
+        186
+      ],
+      "color": "brown",
+      "coco": true
+    },
+    {
+      "box": [
+        589,
+        347,
+        241,
+        231
+      ],
+      "color": "brown",
+      "coco": true
+    },
+    {
+      "box": [
+        50,
+        410,
+        324,
+        310
+      ],
+      "color": "brown",
+      "coco": true
+    },
+    {
+      "box": [
+        754,
+        465,
+        235,
+        227
+      ],
+      "color": "brown",
+      "coco": true
+    },
+    {
+      "box": [
+        371,
+        436,
+        274,
+        243
+      ],
+      "color": "brown",
+      "coco": true
+    },
+    {
+      "box": [
+        214,
+        551,
+        369,
+        357
+      ],
+      "color": "brown",
+      "coco": true
+    },
+    {
+      "box": [
+        43,
+        21,
+        996,
+        938
+      ],
+      "color": "brown",
+      "coco": true
+    },
+    {
+      "box": [
+        230,
+        176,
+        316,
+        300
+      ],
+      "color": "brown",
+      "coco": true
+    },
+    {
+      "box": [
+        458,
+        438,
+        186,
+        241
+      ],
+      "color": "brown",
+      "coco": true
+    },
+    {
+      "box": [
+        486,
+        672,
+        289,
+        265
+      ],
+      "color": "brown",
+      "coco": true
+    },
+    {
+      "box": [
+        565,
+        28,
+        77,
+        100
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        1201,
+        0,
+        60,
+        61
+      ],
+      "color": "purple",
+      "coco": false
+    },
+    {
+      "box": [
+        1185,
+        0,
+        95,
+        67
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        887,
+        498,
+        45,
+        78
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        1041,
+        896,
+        32,
+        51
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        435,
+        683,
+        46,
+        52
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        220,
+        505,
+        39,
+        44
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        543,
+        468,
+        42,
+        31
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        737,
+        408,
+        39,
+        38
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        1253,
+        45,
+        27,
+        38
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        1038,
+        0,
+        108,
+        41
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        0,
+        379,
+        960
+      ],
+      "color": "black",
+      "coco": false
+    }
+  ]
+}

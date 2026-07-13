@@ -1,0 +1,39 @@
+{
+  "image": "dim__foggy_morning_in_iit.jpg",
+  "draft": true,
+  "tags": [
+    "dim-light"
+  ],
+  "objects": [
+    {
+      "box": [
+        1040,
+        107,
+        106,
+        78
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        1204,
+        562,
+        75,
+        293
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        0,
+        0,
+        486,
+        421
+      ],
+      "color": "black",
+      "coco": false
+    }
+  ]
+}

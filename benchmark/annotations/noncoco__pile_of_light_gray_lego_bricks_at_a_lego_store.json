@@ -1,0 +1,37 @@
+{
+  "image": "noncoco__pile_of_light_gray_lego_bricks_at_a_lego_store.jpg",
+  "draft": true,
+  "tags": [],
+  "objects": [
+    {
+      "box": [
+        0,
+        3,
+        1277,
+        947
+      ],
+      "color": "white",
+      "coco": true
+    },
+    {
+      "box": [
+        575,
+        909,
+        53,
+        51
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        3,
+        1277,
+        947
+      ],
+      "color": "black",
+      "coco": true
+    }
+  ]
+}

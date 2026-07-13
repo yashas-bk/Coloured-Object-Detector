@@ -1,0 +1,109 @@
+{
+  "image": "coco__1959_holden_fc_sedan_taxi_yellow_cab_co_9596048105.jpg",
+  "draft": true,
+  "tags": [
+    "outdoor"
+  ],
+  "objects": [
+    {
+      "box": [
+        0,
+        261,
+        51,
+        107
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        227,
+        230,
+        56,
+        29
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        208,
+        43,
+        51
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        55,
+        154,
+        1161,
+        732
+      ],
+      "color": "brown",
+      "coco": true
+    },
+    {
+      "box": [
+        351,
+        230,
+        23,
+        55
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        285,
+        0,
+        995,
+        452
+      ],
+      "color": "cyan",
+      "coco": true
+    },
+    {
+      "box": [
+        420,
+        212,
+        331,
+        140
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        516,
+        137,
+        85,
+        29
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        285,
+        0,
+        995,
+        452
+      ],
+      "color": "white",
+      "coco": true
+    },
+    {
+      "box": [
+        55,
+        154,
+        1161,
+        732
+      ],
+      "color": "black",
+      "coco": true
+    }
+  ]
+}

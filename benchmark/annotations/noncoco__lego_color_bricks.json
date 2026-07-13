@@ -1,0 +1,167 @@
+{
+  "image": "noncoco__lego_color_bricks.jpg",
+  "draft": true,
+  "tags": [],
+  "objects": [
+    {
+      "box": [
+        277,
+        726,
+        146,
+        131
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        675,
+        656,
+        52,
+        67
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        40,
+        248,
+        387,
+        391
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        965,
+        0,
+        74,
+        81
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        435,
+        185,
+        217,
+        139
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        1068,
+        694,
+        126,
+        106
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        416,
+        759,
+        357,
+        98
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        386,
+        165,
+        60,
+        84
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        1023,
+        0,
+        257,
+        182
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        907,
+        479,
+        373,
+        288
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        147,
+        0,
+        278,
+        115
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        626,
+        0,
+        138,
+        73
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        811,
+        0,
+        167,
+        110
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        943,
+        709,
+        73,
+        37
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        1183,
+        185,
+        97,
+        79
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        957,
+        50,
+        165,
+        155
+      ],
+      "color": "white",
+      "coco": false
+    }
+  ]
+}

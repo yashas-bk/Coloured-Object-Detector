@@ -1,0 +1,39 @@
+{
+  "image": "dim__d_lmen_d_lmener_sommer_open_air_konzert_2018_9316_18.jpg",
+  "draft": true,
+  "tags": [
+    "dim-light"
+  ],
+  "objects": [
+    {
+      "box": [
+        263,
+        440,
+        308,
+        92
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        832,
+        561,
+        49,
+        18
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        718,
+        493,
+        160,
+        43
+      ],
+      "color": "yellow",
+      "coco": false
+    }
+  ]
+}

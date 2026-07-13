@@ -1,0 +1,167 @@
+{
+  "image": "noncoco__glasgow_buchanan_street_traffic_cone.jpg",
+  "draft": true,
+  "tags": [],
+  "objects": [
+    {
+      "box": [
+        725,
+        442,
+        24,
+        72
+      ],
+      "color": "white",
+      "coco": true
+    },
+    {
+      "box": [
+        850,
+        381,
+        226,
+        375
+      ],
+      "color": "white",
+      "coco": true
+    },
+    {
+      "box": [
+        44,
+        0,
+        40,
+        31
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        269,
+        448,
+        67,
+        179
+      ],
+      "color": "white",
+      "coco": true
+    },
+    {
+      "box": [
+        263,
+        336,
+        41,
+        162
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        1257,
+        329,
+        23,
+        96
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        433,
+        66,
+        42
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        326,
+        216,
+        22,
+        42
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        641,
+        0,
+        536,
+        338
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        725,
+        442,
+        24,
+        72
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        850,
+        381,
+        226,
+        375
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        428,
+        445,
+        43,
+        116
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        269,
+        448,
+        67,
+        179
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        270,
+        176,
+        620,
+        703
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        675,
+        436,
+        71,
+        214
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        676,
+        437,
+        60,
+        169
+      ],
+      "color": "black",
+      "coco": true
+    }
+  ]
+}

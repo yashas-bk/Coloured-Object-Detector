@@ -1,0 +1,127 @@
+{
+  "image": "noncoco__buntstifte_2021_9151.jpg",
+  "draft": true,
+  "tags": [],
+  "objects": [
+    {
+      "box": [
+        440,
+        491,
+        139,
+        51
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        82,
+        1280,
+        764
+      ],
+      "color": "brown",
+      "coco": true
+    },
+    {
+      "box": [
+        0,
+        50,
+        537,
+        466
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        654,
+        458,
+        101,
+        82
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        445,
+        471,
+        140,
+        59
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        432,
+        524,
+        131,
+        49
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        480,
+        431,
+        142
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        833,
+        430,
+        254,
+        96
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        486,
+        414,
+        120
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        82,
+        1280,
+        764
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        727,
+        0,
+        553,
+        382
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        0,
+        575,
+        397
+      ],
+      "color": "black",
+      "coco": false
+    }
+  ]
+}

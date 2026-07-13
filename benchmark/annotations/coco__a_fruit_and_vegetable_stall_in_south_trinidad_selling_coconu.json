@@ -1,0 +1,179 @@
+{
+  "image": "coco__a_fruit_and_vegetable_stall_in_south_trinidad_selling_coconu.jpg",
+  "draft": true,
+  "tags": [
+    "outdoor"
+  ],
+  "objects": [
+    {
+      "box": [
+        344,
+        749,
+        62,
+        54
+      ],
+      "color": "yellow",
+      "coco": true
+    },
+    {
+      "box": [
+        247,
+        787,
+        84,
+        72
+      ],
+      "color": "yellow",
+      "coco": true
+    },
+    {
+      "box": [
+        53,
+        1037,
+        172,
+        93
+      ],
+      "color": "brown",
+      "coco": true
+    },
+    {
+      "box": [
+        0,
+        956,
+        29,
+        27
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        543,
+        1097,
+        76,
+        34
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        277,
+        800,
+        50,
+        42
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        432,
+        888,
+        26,
+        52
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        533,
+        871,
+        53,
+        36
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        1006,
+        616,
+        105,
+        515
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        465,
+        279,
+        28,
+        60
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        665,
+        693,
+        59,
+        43
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        478,
+        163,
+        28,
+        91
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        657,
+        574,
+        348
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        1013,
+        0,
+        98,
+        89
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        53,
+        1037,
+        172,
+        93
+      ],
+      "color": "white",
+      "coco": true
+    },
+    {
+      "box": [
+        344,
+        749,
+        62,
+        54
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        53,
+        1037,
+        172,
+        93
+      ],
+      "color": "black",
+      "coco": true
+    }
+  ]
+}

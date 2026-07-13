@@ -1,0 +1,249 @@
+{
+  "image": "coco__banana_stall_in_a_local_market.jpg",
+  "draft": true,
+  "tags": [
+    "outdoor"
+  ],
+  "objects": [
+    {
+      "box": [
+        169,
+        471,
+        119,
+        41
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        1574,
+        180,
+        133
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        688,
+        31,
+        76,
+        168
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        712,
+        0,
+        51,
+        69
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        1168,
+        214,
+        112,
+        72
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        123,
+        419,
+        86,
+        75
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        333,
+        469,
+        75,
+        50
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        1015,
+        0,
+        76,
+        83
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        698,
+        28,
+        76,
+        158
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        523,
+        839,
+        290,
+        498
+      ],
+      "color": "green",
+      "coco": true
+    },
+    {
+      "box": [
+        734,
+        353,
+        33,
+        35
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        1121,
+        295,
+        58,
+        23
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        1109,
+        367,
+        72,
+        48
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        118,
+        460,
+        57,
+        30
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        504,
+        278,
+        19,
+        46
+      ],
+      "color": "cyan",
+      "coco": false
+    },
+    {
+      "box": [
+        569,
+        184,
+        225,
+        54
+      ],
+      "color": "cyan",
+      "coco": false
+    },
+    {
+      "box": [
+        778,
+        119,
+        253,
+        104
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        1205,
+        389,
+        49,
+        34
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        530,
+        457,
+        170,
+        37
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        1123,
+        109,
+        157,
+        87
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        832,
+        289,
+        35,
+        23
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        1010,
+        1227,
+        270,
+        480
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        523,
+        839,
+        290,
+        498
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        810,
+        280,
+        66,
+        140
+      ],
+      "color": "black",
+      "coco": true
+    }
+  ]
+}

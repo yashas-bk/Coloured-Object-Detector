@@ -1,0 +1,359 @@
+{
+  "image": "coco__banana_rotee_stall_11900303024.jpg",
+  "draft": true,
+  "tags": [
+    "outdoor"
+  ],
+  "objects": [
+    {
+      "box": [
+        998,
+        412,
+        51,
+        23
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        771,
+        461,
+        39,
+        33
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        833,
+        286,
+        67,
+        209
+      ],
+      "color": "orange",
+      "coco": true
+    },
+    {
+      "box": [
+        963,
+        269,
+        97,
+        15
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        961,
+        228,
+        103,
+        14
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        687,
+        490,
+        186,
+        137
+      ],
+      "color": "yellow",
+      "coco": true
+    },
+    {
+      "box": [
+        281,
+        51,
+        26,
+        35
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        206,
+        39,
+        28,
+        44
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        1227,
+        60,
+        53,
+        35
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        0,
+        77,
+        50
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        523,
+        313,
+        67,
+        114
+      ],
+      "color": "brown",
+      "coco": true
+    },
+    {
+      "box": [
+        687,
+        490,
+        186,
+        137
+      ],
+      "color": "brown",
+      "coco": true
+    },
+    {
+      "box": [
+        833,
+        286,
+        67,
+        209
+      ],
+      "color": "brown",
+      "coco": true
+    },
+    {
+      "box": [
+        1163,
+        213,
+        37,
+        140
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        186,
+        0,
+        586,
+        119
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        40,
+        477,
+        40,
+        23
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        804,
+        135,
+        151,
+        118
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        1044,
+        94,
+        236,
+        50
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        299,
+        372,
+        49,
+        40
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        88,
+        356,
+        51,
+        98
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        220,
+        233,
+        68,
+        36
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        1015,
+        440,
+        36,
+        88
+      ],
+      "color": "white",
+      "coco": true
+    },
+    {
+      "box": [
+        1040,
+        153,
+        239,
+        685
+      ],
+      "color": "white",
+      "coco": true
+    },
+    {
+      "box": [
+        0,
+        0,
+        130,
+        219
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        577,
+        272,
+        148,
+        201
+      ],
+      "color": "white",
+      "coco": true
+    },
+    {
+      "box": [
+        147,
+        373,
+        11,
+        126
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        102,
+        583,
+        47,
+        41
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        523,
+        313,
+        67,
+        114
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        1040,
+        153,
+        239,
+        685
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        392,
+        247,
+        192,
+        309
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        833,
+        286,
+        67,
+        209
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        577,
+        272,
+        148,
+        201
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        574,
+        298,
+        100,
+        158
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        828,
+        600,
+        315,
+        247
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        789,
+        362,
+        61,
+        139
+      ],
+      "color": "black",
+      "coco": true
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "image": "dim__elegant_antique_room_interior_with_floral_curtains_and_a_sun.jpg",
+  "draft": true,
+  "tags": [
+    "dim-light"
+  ],
+  "objects": [
+    {
+      "box": [
+        601,
+        1044,
+        170,
+        243
+      ],
+      "color": "red",
+      "coco": true
+    },
+    {
+      "box": [
+        826,
+        1079,
+        200,
+        278
+      ],
+      "color": "red",
+      "coco": true
+    },
+    {
+      "box": [
+        0,
+        1006,
+        401,
+        410
+      ],
+      "color": "red",
+      "coco": true
+    },
+    {
+      "box": [
+        431,
+        696,
+        102,
+        119
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        1074,
+        32,
+        34
+      ],
+      "color": "purple",
+      "coco": false
+    },
+    {
+      "box": [
+        615,
+        1747,
+        58,
+        30
+      ],
+      "color": "purple",
+      "coco": false
+    },
+    {
+      "box": [
+        506,
+        1686,
+        246,
+        102
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        293,
+        402,
+        112,
+        383
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        1230,
+        83,
+        75
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        1137,
+        1624,
+        143,
+        130
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        601,
+        1044,
+        170,
+        243
+      ],
+      "color": "white",
+      "coco": true
+    },
+    {
+      "box": [
+        730,
+        989,
+        316,
+        253
+      ],
+      "color": "white",
+      "coco": true
+    },
+    {
+      "box": [
+        731,
+        994,
+        315,
+        132
+      ],
+      "color": "white",
+      "coco": true
+    },
+    {
+      "box": [
+        730,
+        989,
+        316,
+        253
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        731,
+        994,
+        315,
+        132
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        1132,
+        790,
+        148,
+        873
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        1186,
+        623,
+        94,
+        109
+      ],
+      "color": "black",
+      "coco": false
+    }
+  ]
+}

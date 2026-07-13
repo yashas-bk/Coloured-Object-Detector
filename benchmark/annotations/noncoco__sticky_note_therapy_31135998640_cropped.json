@@ -1,0 +1,247 @@
+{
+  "image": "noncoco__sticky_note_therapy_31135998640_cropped.jpg",
+  "draft": true,
+  "tags": [],
+  "objects": [
+    {
+      "box": [
+        634,
+        552,
+        286,
+        276
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        1145,
+        688,
+        135,
+        264
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        564,
+        73,
+        294,
+        292
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        274,
+        297,
+        213,
+        278
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        1003,
+        360,
+        277,
+        281
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        132,
+        545,
+        281,
+        291
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        873,
+        63,
+        117
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        547,
+        676,
+        289,
+        280
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        118,
+        0,
+        143,
+        12
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        157,
+        0,
+        50,
+        26
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        391,
+        0,
+        277,
+        131
+      ],
+      "color": "cyan",
+      "coco": false
+    },
+    {
+      "box": [
+        373,
+        283,
+        310,
+        361
+      ],
+      "color": "cyan",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        306,
+        209,
+        270
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        280,
+        75,
+        215,
+        229
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        1112,
+        62,
+        168,
+        257
+      ],
+      "color": "purple",
+      "coco": false
+    },
+    {
+      "box": [
+        1109,
+        0,
+        171,
+        321
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        225,
+        834,
+        298,
+        156
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        0,
+        158,
+        180
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        751,
+        106,
+        239
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        447,
+        205,
+        122,
+        11
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        72,
+        0,
+        158,
+        31
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        437,
+        121,
+        218,
+        18
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        428,
+        0,
+        174,
+        83
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        103,
+        936,
+        46,
+        54
+      ],
+      "color": "black",
+      "coco": false
+    }
+  ]
+}

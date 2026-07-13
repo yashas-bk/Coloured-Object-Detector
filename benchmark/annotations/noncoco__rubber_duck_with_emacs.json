@@ -1,0 +1,107 @@
+{
+  "image": "noncoco__rubber_duck_with_emacs.jpg",
+  "draft": true,
+  "tags": [],
+  "objects": [
+    {
+      "box": [
+        879,
+        563,
+        92,
+        51
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        848,
+        502,
+        230,
+        291
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        1165,
+        541,
+        115,
+        136
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        219,
+        832,
+        124,
+        21
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        300,
+        121,
+        564,
+        420
+      ],
+      "color": "purple",
+      "coco": false
+    },
+    {
+      "box": [
+        915,
+        374,
+        155,
+        23
+      ],
+      "color": "purple",
+      "coco": false
+    },
+    {
+      "box": [
+        41,
+        54,
+        1160,
+        794
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        1077,
+        815,
+        86,
+        38
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        1200,
+        775,
+        31,
+        62
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        805,
+        865,
+        48
+      ],
+      "color": "black",
+      "coco": false
+    }
+  ]
+}

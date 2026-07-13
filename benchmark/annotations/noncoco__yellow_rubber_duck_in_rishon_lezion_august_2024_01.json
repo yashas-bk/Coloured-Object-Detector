@@ -1,0 +1,67 @@
+{
+  "image": "noncoco__yellow_rubber_duck_in_rishon_lezion_august_2024_01.jpg",
+  "draft": true,
+  "tags": [],
+  "objects": [
+    {
+      "box": [
+        511,
+        247,
+        228,
+        223
+      ],
+      "color": "yellow",
+      "coco": true
+    },
+    {
+      "box": [
+        511,
+        282,
+        227,
+        188
+      ],
+      "color": "yellow",
+      "coco": true
+    },
+    {
+      "box": [
+        954,
+        0,
+        326,
+        61
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        527,
+        283,
+        58,
+        89
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        110,
+        382,
+        250,
+        194
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        913,
+        28,
+        367,
+        277
+      ],
+      "color": "white",
+      "coco": false
+    }
+  ]
+}

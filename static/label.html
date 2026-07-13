@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Labeling — chroma·detect benchmark</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #101012; --surface: #17171a; --border: #26262b; --border-strong: #3a3a41;
+    --text: #e7e7ea; --muted: #9d9da8; --faint: #64646e;
+    --ink: #fafafa; --ink-contrast: #111113; --accent: #4ade80;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { color-scheme: dark; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Inter", system-ui, sans-serif; font-size: 14px;
+    display: flex; height: 100vh; overflow: hidden;
+  }
+  .mono { font-family: "JetBrains Mono", monospace; font-size: 12px; }
+
+  aside {
+    width: 250px; border-right: 1px solid var(--border); background: var(--surface);
+    display: flex; flex-direction: column;
+  }
+  aside header { padding: 14px 16px; border-bottom: 1px solid var(--border); }
+  aside header h1 { font-size: 14px; font-weight: 600; }
+  aside header .sub { color: var(--muted); font-size: 12px; margin-top: 2px; }
+  #imageList { flex: 1; overflow-y: auto; }
+  .img-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 7px 16px; cursor: pointer; font-size: 12.5px; color: var(--muted);
+    border-bottom: 1px solid transparent;
+  }
+  .img-item:hover { background: var(--bg); }
+  .img-item.active { color: var(--text); background: var(--bg); }
+  .img-item .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--border-strong); flex-shrink: 0; margin-left: 8px; }
+  .img-item.labeled .dot { background: var(--accent); }
+
+  main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+  .topbar {
+    display: flex; align-items: center; gap: 12px; padding: 10px 18px;
+    border-bottom: 1px solid var(--border); background: var(--surface); flex-wrap: wrap;
+  }
+  .btn {
+    font-family: inherit; font-size: 13px; font-weight: 500;
+    background: var(--ink); color: var(--ink-contrast);
+    border: 1px solid var(--ink); border-radius: 6px; padding: 6px 14px; cursor: pointer;
+  }
+  .btn:disabled { opacity: 0.35; cursor: default; }
+  .btn.secondary { background: transparent; color: var(--text); border-color: var(--border-strong); }
+  .swatches { display: flex; gap: 6px; align-items: center; }
+  .swatch { width: 20px; height: 20px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.25); cursor: pointer; padding: 0; }
+  .swatch.selected { box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--ink); }
+  .tag-label { display: inline-flex; align-items: center; gap: 5px; color: var(--muted); font-size: 12.5px; cursor: pointer; }
+  .tag-label input { accent-color: var(--ink); }
+  #status { color: var(--muted); font-size: 12.5px; margin-left: auto; }
+
+  .canvas-wrap { flex: 1; overflow: auto; display: flex; align-items: flex-start; justify-content: center; padding: 16px; }
+  canvas { cursor: crosshair; border: 1px solid var(--border); border-radius: 6px; max-width: 100%; height: auto; }
+
+  .boxbar {
+    border-top: 1px solid var(--border); background: var(--surface);
+    padding: 8px 18px; max-height: 130px; overflow-y: auto; font-size: 12.5px;
+  }
+  .box-row { display: flex; align-items: center; gap: 10px; padding: 3px 0; color: var(--muted); }
+  .box-row .chip { width: 12px; height: 12px; border-radius: 3px; border: 1px solid rgba(255,255,255,0.3); }
+  .box-row button { background: none; border: none; color: var(--faint); cursor: pointer; font-size: 12px; }
+  .box-row button:hover { color: var(--text); }
+  .box-row label { display: inline-flex; gap: 4px; align-items: center; cursor: pointer; }
+  kbd { background: var(--bg); border: 1px solid var(--border-strong); border-radius: 4px; padding: 0 5px; font-size: 11px; }
+</style>
+</head>
+<body>
+
+<aside>
+  <header>
+    <h1>Benchmark labeling</h1>
+    <div class="sub"><span id="progress">–</span> · <a href="/" style="color:var(--muted)">back to app</a></div>
+  </header>
+  <div id="imageList"></div>
+</aside>
+
+<main>
+  <div class="topbar">
+    <div class="swatches" id="swatches"></div>
+    <span class="mono" id="currentColor">yellow</span>
+    <label class="tag-label"><input type="checkbox" id="tagDim" /> dim-light</label>
+    <label class="tag-label"><input type="checkbox" id="tagCluttered" /> cluttered</label>
+    <label class="tag-label"><input type="checkbox" id="tagOutdoor" /> outdoor</label>
+    <button class="btn secondary" id="suggestBtn">Suggest boxes</button>
+    <button class="btn secondary" id="clearBtn">Clear</button>
+    <button class="btn" id="saveBtn">Save &amp; next <kbd>S</kbd></button>
+    <span id="status"></span>
+  </div>
+  <div class="canvas-wrap"><canvas id="cv"></canvas></div>
+  <div class="boxbar" id="boxbar">Drag on the image to draw a box with the selected color. <kbd>S</kbd> save · <kbd>Z</kbd> undo box</div>
+</main>
+
+<script>
+  const cv = document.getElementById("cv");
+  const ctx = cv.getContext("2d");
+  const statusEl = document.getElementById("status");
+  let images = [], current = null, img = new Image();
+  let objects = [];  // {box:[x,y,w,h], color, coco}
+  let selectedColor = "yellow", swatchHex = {};
+  let drawing = null;
+
+  fetch("/colors").then(r => r.json()).then(cats => {
+    const el = document.getElementById("swatches");
+    cats.forEach(({name, swatch}) => {
+      swatchHex[name] = swatch;
+      const b = document.createElement("button");
+      b.className = "swatch"; b.title = name; b.style.background = swatch;
+      b.onclick = () => {
+        selectedColor = name;
+        document.getElementById("currentColor").textContent = name;
+        document.querySelectorAll(".swatch").forEach(s => s.classList.toggle("selected", s === b));
+      };
+      el.appendChild(b);
+      if (name === "yellow") b.click();
+    });
+  });
+
+  async function loadList(keepCurrent) {
+    images = await (await fetch("/bench/images")).json();
+    const list = document.getElementById("imageList");
+    list.innerHTML = "";
+    const done = images.filter(i => i.labeled).length;
+    document.getElementById("progress").textContent = `${done}/${images.length} labeled`;
+    images.forEach(item => {
+      const div = document.createElement("div");
+      div.className = "img-item" + (item.labeled ? " labeled" : "") + (current === item.name ? " active" : "");
+      div.innerHTML = `<span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${item.name}</span><span class="dot"></span>`;
+      div.onclick = () => openImage(item.name);
+      list.appendChild(div);
+    });
+    if (!keepCurrent && images.length && !current) openImage(images[0].name);
+  }
+
+  async function openImage(name) {
+    current = name;
+    objects = [];
+    const ann = await (await fetch("/bench/annotations/" + name)).json();
+    objects = ann.objects || [];
+    document.getElementById("tagDim").checked = ann.tags?.includes("dim-light") ?? false;
+    document.getElementById("tagCluttered").checked = ann.tags?.includes("cluttered") ?? false;
+    document.getElementById("tagOutdoor").checked = ann.tags?.includes("outdoor") ?? false;
+    img = new Image();
+    img.onload = () => { cv.width = img.naturalWidth; cv.height = img.naturalHeight; redraw(); };
+    img.src = "/bench/image/" + name;
+    statusEl.textContent = name;
+    loadList(true);
+  }
+
+  function redraw() {
+    ctx.drawImage(img, 0, 0);
+    objects.forEach((o, i) => {
+      const [x, y, w, h] = o.box;
+      ctx.strokeStyle = swatchHex[o.color] || "#fff";
+      ctx.lineWidth = Math.max(2, cv.width / 400);
+      ctx.strokeRect(x, y, w, h);
+      ctx.font = `${Math.max(12, cv.width / 60)}px JetBrains Mono`;
+      ctx.fillStyle = swatchHex[o.color] || "#fff";
+      ctx.fillText(`${i + 1} ${o.color}${o.coco ? "" : " ·nc"}`, x + 4, Math.max(y - 6, 14));
+    });
+    if (drawing) {
+      ctx.strokeStyle = swatchHex[selectedColor];
+      ctx.setLineDash([6, 4]);
+      ctx.strokeRect(drawing.x, drawing.y, drawing.w, drawing.h);
+      ctx.setLineDash([]);
+    }
+    renderBoxbar();
+  }
+
+  function renderBoxbar() {
+    const bar = document.getElementById("boxbar");
+    if (!objects.length) {
+      bar.innerHTML = "Drag on the image to draw a box with the selected color. <kbd>S</kbd> save · <kbd>Z</kbd> undo box";
+      return;
+    }
+    bar.innerHTML = "";
+    objects.forEach((o, i) => {
+      const row = document.createElement("div");
+      row.className = "box-row";
+      row.innerHTML =
+        `<span class="chip" style="background:${swatchHex[o.color]}"></span>` +
+        `<span>#${i + 1} ${o.color} · ${o.box[2]}×${o.box[3]}</span>` +
+        `<label><input type="checkbox" ${o.coco ? "checked" : ""} data-i="${i}" class="coco-toggle"/> COCO object</label>` +
+        `<button data-i="${i}" class="del">remove</button>`;
+      bar.appendChild(row);
+    });
+    bar.querySelectorAll(".del").forEach(b => b.onclick = () => { objects.splice(+b.dataset.i, 1); redraw(); });
+    bar.querySelectorAll(".coco-toggle").forEach(b => b.onchange = () => { objects[+b.dataset.i].coco = b.checked; });
+  }
+
+  function canvasPos(e) {
+    const r = cv.getBoundingClientRect();
+    return {
+      x: Math.round((e.clientX - r.left) * (cv.width / r.width)),
+      y: Math.round((e.clientY - r.top) * (cv.height / r.height)),
+    };
+  }
+  cv.addEventListener("mousedown", e => {
+    const p = canvasPos(e);
+    drawing = { x0: p.x, y0: p.y, x: p.x, y: p.y, w: 0, h: 0 };
+  });
+  cv.addEventListener("mousemove", e => {
+    if (!drawing) return;
+    const p = canvasPos(e);
+    drawing.x = Math.min(drawing.x0, p.x); drawing.y = Math.min(drawing.y0, p.y);
+    drawing.w = Math.abs(p.x - drawing.x0); drawing.h = Math.abs(p.y - drawing.y0);
+    redraw();
+  });
+  window.addEventListener("mouseup", () => {
+    if (!drawing) return;
+    if (drawing.w > 8 && drawing.h > 8) {
+      objects.push({ box: [drawing.x, drawing.y, drawing.w, drawing.h], color: selectedColor, coco: false });
+    }
+    drawing = null;
+    redraw();
+  });
+
+  document.getElementById("clearBtn").onclick = () => { objects = []; redraw(); };
+
+  document.getElementById("suggestBtn").onclick = async () => {
+    if (!current) return;
+    statusEl.textContent = "Running fusion suggestions…";
+    try {
+      const { suggestions } = await (await fetch("/bench/suggest/" + current)).json();
+      suggestions.forEach(s => objects.push({ box: s.box, color: s.color, coco: s.coco }));
+      statusEl.textContent = `Added ${suggestions.length} suggestions — remove the wrong ones.`;
+      redraw();
+    } catch { statusEl.textContent = "Suggestion failed."; }
+  };
+
+  async function save() {
+    if (!current) return;
+    const tags = [];
+    if (document.getElementById("tagDim").checked) tags.push("dim-light");
+    if (document.getElementById("tagCluttered").checked) tags.push("cluttered");
+    if (document.getElementById("tagOutdoor").checked) tags.push("outdoor");
+    await fetch("/bench/annotations/" + current, {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ tags, objects }),
+    });
+    const idx = images.findIndex(i => i.name === current);
+    const next = images.find((it, j) => j > idx && !it.labeled) || images[idx + 1];
+    statusEl.textContent = "Saved.";
+    if (next) openImage(next.name); else loadList(true);
+  }
+  document.getElementById("saveBtn").onclick = save;
+
+  window.addEventListener("keydown", e => {
+    if (e.target.tagName === "INPUT") return;
+    if (e.key.toLowerCase() === "s") { e.preventDefault(); save(); }
+    if (e.key.toLowerCase() === "z") { objects.pop(); redraw(); }
+  });
+
+  loadList(false);
+</script>
+</body>
+</html>

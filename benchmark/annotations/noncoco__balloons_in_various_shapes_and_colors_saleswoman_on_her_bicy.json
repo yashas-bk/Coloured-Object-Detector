@@ -1,0 +1,307 @@
+{
+  "image": "noncoco__balloons_in_various_shapes_and_colors_saleswoman_on_her_bicy.jpg",
+  "draft": true,
+  "tags": [],
+  "objects": [
+    {
+      "box": [
+        908,
+        812,
+        115,
+        145
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        478,
+        955,
+        48,
+        42
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        802,
+        1538,
+        27,
+        42
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        693,
+        1475,
+        46,
+        96
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        660,
+        1436,
+        70,
+        131
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        879,
+        259,
+        401,
+        459
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        528,
+        1295,
+        555,
+        475
+      ],
+      "color": "brown",
+      "coco": true
+    },
+    {
+      "box": [
+        1254,
+        718,
+        26,
+        71
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        500,
+        1370,
+        123,
+        114
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        1145,
+        550,
+        123,
+        86
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        534,
+        723,
+        28,
+        72
+      ],
+      "color": "cyan",
+      "coco": false
+    },
+    {
+      "box": [
+        564,
+        901,
+        23,
+        80
+      ],
+      "color": "cyan",
+      "coco": false
+    },
+    {
+      "box": [
+        398,
+        820,
+        28,
+        40
+      ],
+      "color": "cyan",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        0,
+        1280,
+        227
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        775,
+        126,
+        83
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        882,
+        1035,
+        49,
+        38
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        1105,
+        793,
+        62,
+        60
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        285,
+        939,
+        137,
+        77
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        695,
+        677,
+        43,
+        77
+      ],
+      "color": "purple",
+      "coco": false
+    },
+    {
+      "box": [
+        519,
+        212,
+        208,
+        251
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        339,
+        979,
+        138,
+        122
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        516,
+        745,
+        27,
+        56
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        604,
+        1004,
+        50,
+        41
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        797,
+        900,
+        42,
+        47
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        1115,
+        730,
+        28,
+        46
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        1176,
+        57,
+        186
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        528,
+        1295,
+        555,
+        475
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        950,
+        876,
+        154,
+        298
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        711,
+        1059,
+        330,
+        573
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        949,
+        1009,
+        143,
+        209
+      ],
+      "color": "black",
+      "coco": true
+    }
+  ]
+}

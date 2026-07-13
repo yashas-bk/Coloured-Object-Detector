@@ -1,0 +1,159 @@
+{
+  "image": "coco__usa_new_york_nyc_medallion_cab_toyota_rav4_ny_taxi_y202490c_.jpg",
+  "draft": true,
+  "tags": [
+    "outdoor"
+  ],
+  "objects": [
+    {
+      "box": [
+        0,
+        169,
+        169,
+        473
+      ],
+      "color": "orange",
+      "coco": true
+    },
+    {
+      "box": [
+        15,
+        206,
+        1252,
+        695
+      ],
+      "color": "orange",
+      "coco": true
+    },
+    {
+      "box": [
+        405,
+        83,
+        184,
+        166
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        181,
+        334,
+        25,
+        33
+      ],
+      "color": "cyan",
+      "coco": false
+    },
+    {
+      "box": [
+        811,
+        255,
+        84,
+        35
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        152,
+        256,
+        249,
+        80
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        752,
+        240,
+        411,
+        206
+      ],
+      "color": "white",
+      "coco": true
+    },
+    {
+      "box": [
+        22,
+        0,
+        12,
+        52
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        590,
+        125,
+        77,
+        45
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        926,
+        0,
+        124,
+        75
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        1028,
+        685,
+        78,
+        47
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        176,
+        0,
+        226,
+        242
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        169,
+        169,
+        473
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        15,
+        206,
+        1252,
+        695
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        752,
+        240,
+        411,
+        206
+      ],
+      "color": "black",
+      "coco": true
+    }
+  ]
+}

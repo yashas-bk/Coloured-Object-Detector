@@ -1,0 +1,97 @@
+{
+  "image": "noncoco__edinburgh_mailbox_1060751.jpg",
+  "draft": true,
+  "tags": [],
+  "objects": [
+    {
+      "box": [
+        1233,
+        0,
+        47,
+        1673
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        344,
+        1328,
+        52,
+        167
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        298,
+        815,
+        41,
+        22
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        732,
+        1540,
+        70,
+        19
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        596,
+        265,
+        114,
+        21
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        770,
+        1149,
+        128,
+        16
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        509,
+        1269,
+        299,
+        326
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        930,
+        780,
+        67,
+        71
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        277,
+        1260,
+        99,
+        65
+      ],
+      "color": "white",
+      "coco": false
+    }
+  ]
+}

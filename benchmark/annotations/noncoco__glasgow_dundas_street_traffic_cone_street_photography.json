@@ -1,0 +1,37 @@
+{
+  "image": "noncoco__glasgow_dundas_street_traffic_cone_street_photography.jpg",
+  "draft": true,
+  "tags": [],
+  "objects": [
+    {
+      "box": [
+        1171,
+        0,
+        34,
+        240
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        464,
+        223,
+        63,
+        181
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        1193,
+        482,
+        87,
+        344
+      ],
+      "color": "black",
+      "coco": false
+    }
+  ]
+}

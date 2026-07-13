@@ -1,0 +1,529 @@
+{
+  "image": "dim__colorful_neon_street_signs_in_kabukich_shinjuku_tokyo.jpg",
+  "draft": true,
+  "tags": [
+    "dim-light"
+  ],
+  "objects": [
+    {
+      "box": [
+        1088,
+        320,
+        37,
+        145
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        885,
+        138,
+        38,
+        73
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        519,
+        99,
+        18,
+        43
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        21,
+        411,
+        130,
+        256
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        1083,
+        613,
+        29,
+        33
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        966,
+        327,
+        40,
+        75
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        940,
+        0,
+        43,
+        36
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        334,
+        312,
+        76,
+        29
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        235,
+        130,
+        138,
+        163
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        1090,
+        0,
+        184,
+        162
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        1132,
+        699,
+        28,
+        80
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        149,
+        542,
+        25,
+        76
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        933,
+        255,
+        45,
+        52
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        305,
+        610,
+        47,
+        34
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        1092,
+        0,
+        33,
+        84
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        520,
+        47,
+        17,
+        42
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        215,
+        629,
+        44,
+        36
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        1007,
+        598,
+        43,
+        30
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        432,
+        448,
+        98,
+        202
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        99,
+        0,
+        52,
+        187
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        849,
+        351,
+        24,
+        76
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        446,
+        409,
+        95,
+        34
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        205,
+        216,
+        11,
+        84
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        401,
+        190,
+        25,
+        85
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        1100,
+        0,
+        31,
+        95
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        139,
+        399,
+        44,
+        314
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        649,
+        472,
+        43,
+        57
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        1110,
+        659,
+        116,
+        104
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        982,
+        0,
+        89,
+        30
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        594,
+        628,
+        31,
+        56
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        1083,
+        522,
+        56,
+        44
+      ],
+      "color": "cyan",
+      "coco": false
+    },
+    {
+      "box": [
+        31,
+        600,
+        58,
+        49
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        677,
+        355,
+        22,
+        108
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        151,
+        181,
+        21,
+        203
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        1010,
+        634,
+        46,
+        33
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        219,
+        224,
+        104,
+        33
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        823,
+        430,
+        49,
+        60
+      ],
+      "color": "purple",
+      "coco": false
+    },
+    {
+      "box": [
+        1002,
+        637,
+        59,
+        98
+      ],
+      "color": "purple",
+      "coco": false
+    },
+    {
+      "box": [
+        1100,
+        159,
+        28,
+        41
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        1125,
+        616,
+        42,
+        40
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        1234,
+        517,
+        46,
+        44
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        747,
+        553,
+        34,
+        98
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        241,
+        582,
+        90,
+        267
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        324,
+        581,
+        83,
+        268
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        921,
+        562,
+        80,
+        205
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        519,
+        587,
+        76,
+        185
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        586,
+        554,
+        53,
+        162
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        794,
+        543,
+        49,
+        149
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        660,
+        555,
+        65,
+        176
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        416,
+        567,
+        47,
+        151
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        273,
+        398,
+        55,
+        123
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        861,
+        559,
+        53,
+        195
+      ],
+      "color": "black",
+      "coco": true
+    }
+  ]
+}

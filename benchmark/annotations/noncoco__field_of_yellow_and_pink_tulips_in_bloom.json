@@ -1,0 +1,197 @@
+{
+  "image": "noncoco__field_of_yellow_and_pink_tulips_in_bloom.jpg",
+  "draft": true,
+  "tags": [],
+  "objects": [
+    {
+      "box": [
+        998,
+        70,
+        27,
+        31
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        538,
+        1309,
+        39,
+        31
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        504,
+        1103,
+        40,
+        42
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        463,
+        1278,
+        23,
+        54
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        270,
+        236,
+        57,
+        34
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        933,
+        415,
+        29,
+        38
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        1016,
+        692,
+        54,
+        48
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        537,
+        638,
+        53,
+        30
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        1221,
+        246,
+        59,
+        42
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        543,
+        1873,
+        89,
+        47
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        1,
+        0,
+        1279,
+        1913
+      ],
+      "color": "green",
+      "coco": true
+    },
+    {
+      "box": [
+        714,
+        1759,
+        92,
+        110
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        39,
+        1865,
+        73,
+        41
+      ],
+      "color": "purple",
+      "coco": false
+    },
+    {
+      "box": [
+        481,
+        609,
+        63,
+        62
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        273,
+        222,
+        54,
+        21
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        515,
+        1078,
+        27,
+        45
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        705,
+        1153,
+        45,
+        31
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        1217,
+        127,
+        63,
+        57
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        910,
+        1649,
+        30,
+        43
+      ],
+      "color": "white",
+      "coco": false
+    }
+  ]
+}

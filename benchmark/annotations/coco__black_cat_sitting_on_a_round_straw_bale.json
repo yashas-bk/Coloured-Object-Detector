@@ -1,0 +1,119 @@
+{
+  "image": "coco__black_cat_sitting_on_a_round_straw_bale.jpg",
+  "draft": true,
+  "tags": [
+    "outdoor"
+  ],
+  "objects": [
+    {
+      "box": [
+        594,
+        639,
+        54,
+        33
+      ],
+      "color": "orange",
+      "coco": true
+    },
+    {
+      "box": [
+        44,
+        609,
+        111,
+        89
+      ],
+      "color": "orange",
+      "coco": true
+    },
+    {
+      "box": [
+        304,
+        613,
+        52,
+        53
+      ],
+      "color": "orange",
+      "coco": true
+    },
+    {
+      "box": [
+        275,
+        611,
+        74,
+        56
+      ],
+      "color": "orange",
+      "coco": true
+    },
+    {
+      "box": [
+        594,
+        639,
+        54,
+        33
+      ],
+      "color": "brown",
+      "coco": true
+    },
+    {
+      "box": [
+        275,
+        611,
+        74,
+        56
+      ],
+      "color": "brown",
+      "coco": true
+    },
+    {
+      "box": [
+        226,
+        822,
+        900,
+        753
+      ],
+      "color": "brown",
+      "coco": true
+    },
+    {
+      "box": [
+        0,
+        0,
+        1280,
+        668
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        1203,
+        613,
+        77,
+        66
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        750,
+        591,
+        53,
+        36
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        503,
+        715,
+        182,
+        172
+      ],
+      "color": "black",
+      "coco": false
+    }
+  ]
+}

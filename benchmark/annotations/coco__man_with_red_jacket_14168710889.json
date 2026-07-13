@@ -1,0 +1,69 @@
+{
+  "image": "coco__man_with_red_jacket_14168710889.jpg",
+  "draft": true,
+  "tags": [
+    "outdoor"
+  ],
+  "objects": [
+    {
+      "box": [
+        515,
+        60,
+        532,
+        779
+      ],
+      "color": "red",
+      "coco": true
+    },
+    {
+      "box": [
+        298,
+        485,
+        176,
+        23
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        515,
+        60,
+        532,
+        779
+      ],
+      "color": "pink",
+      "coco": true
+    },
+    {
+      "box": [
+        515,
+        60,
+        532,
+        779
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        0,
+        297,
+        36,
+        31
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        16,
+        353,
+        72,
+        89
+      ],
+      "color": "black",
+      "coco": false
+    }
+  ]
+}

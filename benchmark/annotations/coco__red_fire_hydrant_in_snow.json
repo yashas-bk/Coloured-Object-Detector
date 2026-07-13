@@ -1,0 +1,139 @@
+{
+  "image": "coco__red_fire_hydrant_in_snow.jpg",
+  "draft": true,
+  "tags": [
+    "outdoor"
+  ],
+  "objects": [
+    {
+      "box": [
+        336,
+        223,
+        600,
+        1150
+      ],
+      "color": "red",
+      "coco": true
+    },
+    {
+      "box": [
+        0,
+        0,
+        37,
+        48
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        112,
+        1066,
+        119,
+        46
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        693,
+        1231,
+        124,
+        157
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        181,
+        560,
+        142,
+        44
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        857,
+        1057,
+        423,
+        650
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        95,
+        0,
+        576,
+        142
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        162,
+        436,
+        385
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        1235,
+        936,
+        45,
+        48
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        1113,
+        958,
+        88,
+        13
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        1055,
+        796,
+        90,
+        48
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        789,
+        97,
+        125
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        413,
+        1148,
+        299,
+        227
+      ],
+      "color": "black",
+      "coco": false
+    }
+  ]
+}

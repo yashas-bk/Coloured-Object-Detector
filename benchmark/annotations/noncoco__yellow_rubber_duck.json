@@ -1,0 +1,27 @@
+{
+  "image": "noncoco__yellow_rubber_duck.jpg",
+  "draft": true,
+  "tags": [],
+  "objects": [
+    {
+      "box": [
+        154,
+        25,
+        956,
+        841
+      ],
+      "color": "brown",
+      "coco": true
+    },
+    {
+      "box": [
+        951,
+        283,
+        39,
+        84
+      ],
+      "color": "black",
+      "coco": false
+    }
+  ]
+}

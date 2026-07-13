@@ -1,0 +1,217 @@
+{
+  "image": "noncoco__mailbox_in_poland.jpg",
+  "draft": true,
+  "tags": [],
+  "objects": [
+    {
+      "box": [
+        178,
+        138,
+        598,
+        498
+      ],
+      "color": "red",
+      "coco": true
+    },
+    {
+      "box": [
+        432,
+        367,
+        85,
+        47
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        631,
+        432,
+        110,
+        22
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        148,
+        529,
+        70,
+        56
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        987,
+        612,
+        37,
+        49
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        529,
+        131,
+        54
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        161,
+        86,
+        53
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        25,
+        230,
+        111,
+        56
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        312,
+        25,
+        37
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        790,
+        247,
+        52,
+        51
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        991,
+        557,
+        33,
+        25
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        33,
+        372,
+        180,
+        64
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        944,
+        541,
+        24,
+        49
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        80,
+        303,
+        129,
+        56
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        893,
+        395,
+        131,
+        55
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        973,
+        475,
+        51,
+        46
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        167,
+        227,
+        25,
+        54
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        0,
+        320,
+        147
+      ],
+      "color": "brown",
+      "coco": false
+    },
+    {
+      "box": [
+        402,
+        319,
+        154,
+        126
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        178,
+        138,
+        598,
+        498
+      ],
+      "color": "white",
+      "coco": true
+    },
+    {
+      "box": [
+        223,
+        440,
+        212,
+        131
+      ],
+      "color": "white",
+      "coco": false
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "image": "noncoco__pile_of_lego_blocks.jpg",
+  "draft": true,
+  "tags": [],
+  "objects": [
+    {
+      "box": [
+        533,
+        148,
+        80,
+        66
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        121,
+        371,
+        127,
+        180
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        686,
+        52,
+        367,
+        260
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        162,
+        278,
+        337,
+        356
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        696,
+        208,
+        57,
+        22
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        777,
+        207,
+        57,
+        25
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        874,
+        434,
+        125,
+        90
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        598,
+        379,
+        31,
+        49
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        542,
+        199,
+        307,
+        37
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        732,
+        416,
+        54,
+        17
+      ],
+      "color": "cyan",
+      "coco": false
+    },
+    {
+      "box": [
+        341,
+        251,
+        59,
+        65
+      ],
+      "color": "cyan",
+      "coco": false
+    },
+    {
+      "box": [
+        611,
+        456,
+        59,
+        40
+      ],
+      "color": "blue",
+      "coco": true
+    },
+    {
+      "box": [
+        615,
+        9,
+        214,
+        203
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        366,
+        145,
+        164,
+        70
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        110,
+        342,
+        51,
+        43
+      ],
+      "color": "blue",
+      "coco": false
+    },
+    {
+      "box": [
+        852,
+        72,
+        26,
+        80
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        689,
+        242,
+        66,
+        70
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        992,
+        434,
+        21,
+        96
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        669,
+        417,
+        184,
+        54
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        390,
+        319,
+        72,
+        56
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        497,
+        431,
+        37,
+        43
+      ],
+      "color": "black",
+      "coco": false
+    }
+  ]
+}

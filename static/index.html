@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chroma — Color Object Detection</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='13' fill='%23f59e0b'/><circle cx='16' cy='16' r='13' fill='none' stroke='%231c1917' stroke-width='2.5'/></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #101012;
+    --surface: #17171a;
+    --border: #26262b;
+    --border-strong: #3a3a41;
+    --text: #e7e7ea;
+    --muted: #9d9da8;
+    --faint: #64646e;
+    --ink: #fafafa;
+    --ink-contrast: #111113;
+    --live: #22c55e;
+    --radius: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-font-smoothing: antialiased; color-scheme: dark; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+  .mono { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12.5px; }
+
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---- Header ---- */
+  header { border-bottom: 1px solid var(--border); background: var(--surface); }
+  .header-inner {
+    display: flex; align-items: baseline; gap: 14px;
+    padding: 22px 0 20px;
+  }
+  .wordmark { font-size: 19px; font-weight: 600; letter-spacing: -0.02em; }
+  .wordmark .dot { color: var(--faint); }
+  .tagline { color: var(--muted); font-size: 13px; }
+
+  /* ---- Controls bar ---- */
+  .toolbar {
+    display: flex; flex-wrap: wrap; align-items: flex-end; gap: 36px;
+    padding: 20px 0 22px;
+    border-bottom: 1px solid var(--border);
+  }
+  .field-label {
+    display: block;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.07em;
+    text-transform: uppercase; color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .field-label .current { color: var(--text); text-transform: capitalize; letter-spacing: 0; margin-left: 6px; font-weight: 500; }
+
+  .swatches { display: flex; align-items: center; gap: 9px; }
+  .swatch {
+    width: 24px; height: 24px; border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.22); cursor: pointer; padding: 0;
+    transition: transform 0.12s ease;
+  }
+  .swatch:hover { transform: scale(1.15); }
+  .swatch.selected {
+    box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--ink);
+  }
+
+  .slider-field { display: flex; align-items: center; gap: 12px; }
+  input[type="range"] {
+    width: 150px; accent-color: var(--ink); height: 2px;
+  }
+  .slider-value { min-width: 44px; color: var(--muted); }
+
+  .segmented {
+    display: inline-flex; border: 1px solid var(--border-strong);
+    border-radius: 6px; overflow: hidden;
+  }
+  .seg-btn {
+    font-family: inherit; font-size: 13px; font-weight: 500;
+    background: transparent; color: var(--muted); border: none;
+    padding: 7px 14px; cursor: pointer;
+  }
+  .seg-btn + .seg-btn { border-left: 1px solid var(--border-strong); }
+  .seg-btn.active { background: var(--ink); color: var(--ink-contrast); }
+
+  /* ---- Tabs ---- */
+  .tabs { display: flex; gap: 28px; padding-top: 4px; }
+  .tab {
+    background: none; border: none; cursor: pointer;
+    font-family: inherit; font-size: 14px; font-weight: 500;
+    color: var(--muted); padding: 14px 2px 12px;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+  }
+  .tab:hover { color: var(--text); }
+  .tab.active { color: var(--text); border-bottom-color: var(--ink); }
+  .tabs-rule { border-bottom: 1px solid var(--border); }
+
+  /* ---- Panels ---- */
+  main { padding: 28px 0 64px; }
+  .hidden { display: none !important; }
+
+  /* ---- Buttons ---- */
+  .btn {
+    font-family: inherit; font-size: 13.5px; font-weight: 500;
+    background: var(--ink); color: var(--ink-contrast);
+    border: 1px solid var(--ink); border-radius: 6px;
+    padding: 8px 18px; cursor: pointer;
+  }
+  .btn:hover:not(:disabled) { background: #d8d8dc; border-color: #d8d8dc; }
+  .btn:disabled { opacity: 0.35; cursor: default; }
+  .btn.secondary {
+    background: var(--surface); color: var(--text); border-color: var(--border-strong);
+  }
+  .btn.secondary:hover:not(:disabled) { background: var(--bg); }
+  .btn.secondary.armed { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+
+  .actions { display: flex; gap: 10px; margin-bottom: 20px; }
+
+  /* ---- Drop zone ---- */
+  .drop {
+    border: 1px dashed var(--border-strong); border-radius: var(--radius);
+    background: var(--surface);
+    padding: 44px 24px; text-align: center; color: var(--muted);
+    cursor: pointer; margin-bottom: 24px;
+    transition: border-color 0.15s ease;
+  }
+  .drop:hover, .drop.dragover { border-color: var(--ink); color: var(--text); }
+  .drop .hint { display: block; margin-top: 4px; font-size: 12.5px; color: var(--faint); }
+
+  /* ---- Media previews ---- */
+  .preview-row { display: flex; flex-wrap: wrap; gap: 24px; }
+  .preview-col { flex: 1; min-width: 300px; }
+  .preview-col h3 {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.07em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
+  }
+  canvas, video, .preview-col img {
+    max-width: 100%; border-radius: var(--radius);
+    border: 1px solid var(--border); display: block; background: var(--surface);
+  }
+  #srcCanvas.eyedrop { cursor: crosshair; }
+  #camCanvas { background: #111; }
+
+  /* ---- Status & progress ---- */
+  .status { margin-top: 18px; color: var(--muted); }
+  .status strong { color: var(--text); font-weight: 600; }
+  .progress-wrap {
+    height: 4px; background: var(--border); border-radius: 2px;
+    overflow: hidden; margin-top: 18px; max-width: 420px;
+  }
+  .progress-bar { height: 100%; width: 0%; background: var(--ink); transition: width 0.3s ease; }
+
+  .live-dot {
+    display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+    background: var(--live); margin-right: 7px; vertical-align: 1px;
+    animation: pulse 1.6s ease-in-out infinite;
+  }
+  @keyframes pulse { 50% { opacity: 0.35; } }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 18px 0; color: var(--faint); font-size: 12.5px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <span class="wordmark">chroma<span class="dot">·</span>detect</span>
+      <span class="tagline">Find objects by color in images, video, and live camera</span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="toolbar">
+    <div>
+      <label class="field-label">Target color<span class="current" id="swatchName">yellow</span></label>
+      <div class="swatches" id="swatches"></div>
+    </div>
+    <div>
+      <label class="field-label">Minimum object size</label>
+      <div class="slider-field">
+        <input type="range" id="minArea" min="50" max="5000" step="50" value="500" />
+        <span class="slider-value mono" id="minAreaVal">500px²</span>
+      </div>
+    </div>
+    <div>
+      <label class="field-label">Method</label>
+      <div class="segmented" id="methodToggle">
+        <button class="seg-btn active" data-method="classical" title="HSV/LAB color analysis + contours — fast, finds any colored region">Classical CV</button>
+        <button class="seg-btn" data-method="ml" title="YOLOv8 object detection + dominant-color matching — semantic labels, slower">ML · YOLO</button>
+        <button class="seg-btn" data-method="fusion" title="Both engines fused: corroborated detections boosted, each engine covers the other's blind spots">Fusion</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="tabs-rule">
+    <nav class="tabs">
+      <button class="tab active" data-tab="image">Image</button>
+      <button class="tab" data-tab="video">Video</button>
+      <button class="tab" data-tab="webcam">Camera</button>
+      <button class="tab" data-tab="arena">Arena</button>
+    </nav>
+  </div>
+
+  <main>
+    <!-- IMAGE -->
+    <section id="tab-image">
+      <div class="drop" id="dropZone">
+        Drop an image or click to browse
+        <span class="hint">JPEG, PNG · up to 10 MB</span>
+        <input type="file" id="fileInput" accept="image/*" hidden />
+      </div>
+
+      <div class="actions">
+        <button class="btn secondary" id="eyedropBtn" title="Click a pixel in your image to match its color category">Pick color from image</button>
+        <button class="btn" id="detectBtn" disabled>Detect objects</button>
+      </div>
+
+      <div class="preview-row">
+        <div class="preview-col hidden" id="srcCol">
+          <h3>Original</h3>
+          <canvas id="srcCanvas"></canvas>
+        </div>
+        <div class="preview-col hidden" id="resultCol">
+          <h3>Detections</h3>
+          <img id="resultImg" alt="Annotated result" />
+        </div>
+      </div>
+
+      <div class="status" id="status"></div>
+    </section>
+
+    <!-- VIDEO -->
+    <section id="tab-video" class="hidden">
+      <div class="drop" id="vidDrop">
+        Drop a video or click to browse
+        <span class="hint">MP4, MOV, WebM · up to 100 MB · first 60 seconds processed</span>
+        <input type="file" id="vidInput" accept="video/*" hidden />
+      </div>
+
+      <div class="actions">
+        <button class="btn" id="vidBtn" disabled>Detect in video</button>
+      </div>
+
+      <div class="progress-wrap hidden" id="vidProgressWrap">
+        <div class="progress-bar" id="vidProgressBar"></div>
+      </div>
+      <div class="status" id="vidStatus"></div>
+
+      <div class="preview-col hidden" id="vidResultCol" style="margin-top: 24px;">
+        <h3>Annotated result</h3>
+        <video id="vidResult" controls></video>
+      </div>
+    </section>
+
+    <!-- CAMERA -->
+    <section id="tab-webcam" class="hidden">
+      <div class="actions">
+        <button class="btn" id="camBtn">Start camera</button>
+      </div>
+      <canvas id="camCanvas" class="hidden" width="640" height="480"></canvas>
+      <div class="status" id="camStats"></div>
+    </section>
+
+    <!-- ARENA -->
+    <section id="tab-arena" class="hidden">
+      <div class="drop" id="arenaDrop">
+        Drop an image or click to browse — both methods run on it side by side
+        <span class="hint">JPEG, PNG · up to 10 MB · uses the color selected above</span>
+        <input type="file" id="arenaInput" accept="image/*" hidden />
+      </div>
+
+      <div class="actions">
+        <button class="btn" id="arenaBtn" disabled>Run both methods</button>
+      </div>
+
+      <div class="preview-row hidden" id="arenaResults">
+        <div class="preview-col">
+          <h3>Classical CV · <span class="mono" id="arenaClassicalStats"></span></h3>
+          <img id="arenaClassicalImg" alt="Classical result" />
+          <div class="status" id="arenaClassicalNote"></div>
+        </div>
+        <div class="preview-col">
+          <h3>ML · YOLO · <span class="mono" id="arenaMlStats"></span></h3>
+          <img id="arenaMlImg" alt="ML result" />
+          <div class="status" id="arenaMlNote"></div>
+        </div>
+        <div class="preview-col">
+          <h3>Fusion · <span class="mono" id="arenaFusionStats"></span></h3>
+          <img id="arenaFusionImg" alt="Fusion result" />
+          <div class="status" id="arenaFusionNote"></div>
+        </div>
+      </div>
+
+      <div class="status" id="arenaStatus"></div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="container">
+    HSV color-space analysis with contour detection · FastAPI + OpenCV
+  </div>
+</footer>
+
+<script>
+  // ---- Tabs ----
+  document.querySelectorAll(".tab").forEach(tab => {
+    tab.addEventListener("click", () => {
+      document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+      ["image", "video", "webcam", "arena"].forEach(name => {
+        document.getElementById("tab-" + name).classList.toggle("hidden", name !== tab.dataset.tab);
+      });
+      if (tab.dataset.tab !== "webcam") stopCam();
+    });
+  });
+
+  // ---- Controls ----
+  const minArea = document.getElementById("minArea");
+  minArea.addEventListener("input", () => {
+    document.getElementById("minAreaVal").textContent = minArea.value + "px²";
+  });
+
+  // ---- Color category swatches ----
+  const swatchesEl = document.getElementById("swatches");
+  const swatchNameEl = document.getElementById("swatchName");
+  let selectedColor = "yellow";
+
+  function selectSwatch(name) {
+    selectedColor = name;
+    swatchNameEl.textContent = name;
+    document.querySelectorAll(".swatch").forEach(s =>
+      s.classList.toggle("selected", s.dataset.name === name));
+    sendCamConfig();
+  }
+  minArea.addEventListener("change", () => sendCamConfig());
+
+  // ---- Method toggle ----
+  let selectedMethod = "classical";
+  document.querySelectorAll(".seg-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      selectedMethod = btn.dataset.method;
+      document.querySelectorAll(".seg-btn").forEach(b =>
+        b.classList.toggle("active", b === btn));
+      sendCamConfig();
+    });
+  });
+
+  fetch("/colors").then(r => r.json()).then(categories => {
+    categories.forEach(({ name, swatch }) => {
+      const btn = document.createElement("button");
+      btn.className = "swatch";
+      btn.dataset.name = name;
+      btn.title = name;
+      btn.style.background = swatch;
+      btn.addEventListener("click", () => selectSwatch(name));
+      swatchesEl.appendChild(btn);
+    });
+    selectSwatch(selectedColor);
+  });
+
+  // ---- Image: file handling ----
+  const dropZone = document.getElementById("dropZone");
+  const fileInput = document.getElementById("fileInput");
+  const srcCanvas = document.getElementById("srcCanvas");
+  const detectBtn = document.getElementById("detectBtn");
+  const statusEl = document.getElementById("status");
+  let currentFile = null;
+
+  dropZone.addEventListener("click", () => fileInput.click());
+  dropZone.addEventListener("dragover", e => { e.preventDefault(); dropZone.classList.add("dragover"); });
+  dropZone.addEventListener("dragleave", () => dropZone.classList.remove("dragover"));
+  dropZone.addEventListener("drop", e => {
+    e.preventDefault();
+    dropZone.classList.remove("dragover");
+    if (e.dataTransfer.files.length) loadFile(e.dataTransfer.files[0]);
+  });
+  fileInput.addEventListener("change", () => { if (fileInput.files.length) loadFile(fileInput.files[0]); });
+
+  function loadFile(file) {
+    if (!file.type.startsWith("image/")) { statusEl.textContent = "Please choose an image file."; return; }
+    currentFile = file;
+    const img = new Image();
+    img.onload = () => {
+      srcCanvas.width = img.naturalWidth;
+      srcCanvas.height = img.naturalHeight;
+      srcCanvas.getContext("2d").drawImage(img, 0, 0);
+      document.getElementById("srcCol").classList.remove("hidden");
+      document.getElementById("resultCol").classList.add("hidden");
+      detectBtn.disabled = false;
+      statusEl.textContent = "Image loaded — choose a color and detect.";
+      URL.revokeObjectURL(img.src);
+    };
+    img.src = URL.createObjectURL(file);
+  }
+
+  // ---- Image: eyedropper ----
+  const eyedropBtn = document.getElementById("eyedropBtn");
+  let eyedropArmed = false;
+  eyedropBtn.addEventListener("click", () => {
+    eyedropArmed = !eyedropArmed;
+    eyedropBtn.classList.toggle("armed", eyedropArmed);
+    srcCanvas.classList.toggle("eyedrop", eyedropArmed);
+    if (eyedropArmed) statusEl.textContent = "Click a pixel in the original image to match its color.";
+  });
+  srcCanvas.addEventListener("click", async e => {
+    if (!eyedropArmed) return;
+    const rect = srcCanvas.getBoundingClientRect();
+    const x = Math.floor((e.clientX - rect.left) * (srcCanvas.width / rect.width));
+    const y = Math.floor((e.clientY - rect.top) * (srcCanvas.height / rect.height));
+    const [r, g, b] = srcCanvas.getContext("2d").getImageData(x, y, 1, 1).data;
+    const hex = "#" + [r, g, b].map(v => v.toString(16).padStart(2, "0")).join("");
+    eyedropArmed = false;
+    eyedropBtn.classList.remove("armed");
+    srcCanvas.classList.remove("eyedrop");
+    try {
+      const res = await fetch("/classify?color=" + encodeURIComponent(hex));
+      const { category } = await res.json();
+      selectSwatch(category);
+      statusEl.innerHTML = `Matched <span class="mono">${hex.toUpperCase()}</span> to <strong>${category}</strong>.`;
+    } catch {
+      statusEl.textContent = "Could not classify the picked color.";
+    }
+  });
+
+  // ---- Image: detect ----
+  detectBtn.addEventListener("click", async () => {
+    if (!currentFile) return;
+    detectBtn.disabled = true;
+    statusEl.textContent = "Detecting…";
+    try {
+      const form = new FormData();
+      form.append("file", currentFile);
+      form.append("color", selectedColor);
+      form.append("min_area", minArea.value);
+      form.append("method", selectedMethod);
+      const res = await fetch("/detect/image", { method: "POST", body: form });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.detail || `Server error (${res.status})`);
+      }
+      const data = await res.json();
+      document.getElementById("resultImg").src = data.annotated_image;
+      document.getElementById("resultCol").classList.remove("hidden");
+      statusEl.innerHTML = `<strong>${data.count}</strong> ${selectedColor} object${data.count === 1 ? "" : "s"} found.`;
+    } catch (err) {
+      statusEl.textContent = "Error: " + err.message;
+    } finally {
+      detectBtn.disabled = false;
+    }
+  });
+
+  // ---- Video: upload -> job -> poll -> playback ----
+  const vidDrop = document.getElementById("vidDrop");
+  const vidInput = document.getElementById("vidInput");
+  const vidBtn = document.getElementById("vidBtn");
+  const vidStatus = document.getElementById("vidStatus");
+  const vidProgressWrap = document.getElementById("vidProgressWrap");
+  const vidProgressBar = document.getElementById("vidProgressBar");
+  let currentVideo = null, pollTimer = null;
+
+  vidDrop.addEventListener("click", () => vidInput.click());
+  vidDrop.addEventListener("dragover", e => { e.preventDefault(); vidDrop.classList.add("dragover"); });
+  vidDrop.addEventListener("dragleave", () => vidDrop.classList.remove("dragover"));
+  vidDrop.addEventListener("drop", e => {
+    e.preventDefault();
+    vidDrop.classList.remove("dragover");
+    if (e.dataTransfer.files.length) loadVideo(e.dataTransfer.files[0]);
+  });
+  vidInput.addEventListener("change", () => { if (vidInput.files.length) loadVideo(vidInput.files[0]); });
+
+  function loadVideo(file) {
+    if (!file.type.startsWith("video/")) { vidStatus.textContent = "Please choose a video file."; return; }
+    if (file.size > 100 * 1024 * 1024) { vidStatus.textContent = "Video too large (max 100 MB)."; return; }
+    currentVideo = file;
+    vidBtn.disabled = false;
+    document.getElementById("vidResultCol").classList.add("hidden");
+    vidStatus.innerHTML = `Loaded <strong>${file.name}</strong> (${(file.size / 1048576).toFixed(1)} MB).`;
+  }
+
+  vidBtn.addEventListener("click", async () => {
+    if (!currentVideo) return;
+    vidBtn.disabled = true;
+    clearInterval(pollTimer);
+    vidProgressWrap.classList.remove("hidden");
+    vidProgressBar.style.width = "0%";
+    vidStatus.textContent = "Uploading…";
+    try {
+      const form = new FormData();
+      form.append("file", currentVideo);
+      form.append("color", selectedColor);
+      form.append("min_area", minArea.value);
+      form.append("method", selectedMethod);
+      const res = await fetch("/detect/video", { method: "POST", body: form });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.detail || `Server error (${res.status})`);
+      }
+      const { job_id } = await res.json();
+      vidStatus.textContent = "Processing…";
+      pollTimer = setInterval(() => pollJob(job_id), 600);
+    } catch (err) {
+      vidStatus.textContent = "Error: " + err.message;
+      vidProgressWrap.classList.add("hidden");
+      vidBtn.disabled = false;
+    }
+  });
+
+  async function pollJob(jobId) {
+    try {
+      const job = await (await fetch("/jobs/" + jobId)).json();
+      if (job.status === "processing") {
+        const pct = job.total_frames ? Math.round(100 * job.progress / job.total_frames) : 0;
+        vidProgressBar.style.width = pct + "%";
+        vidStatus.innerHTML = `Processing frame <span class="mono">${job.progress} / ${job.total_frames}</span>`;
+        return;
+      }
+      clearInterval(pollTimer);
+      vidBtn.disabled = false;
+      if (job.status === "error") {
+        vidProgressWrap.classList.add("hidden");
+        vidStatus.textContent = "Error: " + job.error;
+        return;
+      }
+      vidProgressBar.style.width = "100%";
+      const s = job.summary;
+      vidStatus.innerHTML = `<strong>${s.total_detections}</strong> detections across ` +
+        `<strong>${s.frames_with_detections}</strong> of ${s.frames} frames` +
+        (s.max_concurrent > 1 ? ` · up to <strong>${s.max_concurrent}</strong> at once` : "") + ".";
+      const video = document.getElementById("vidResult");
+      video.src = "/jobs/" + jobId + "/result";
+      document.getElementById("vidResultCol").classList.remove("hidden");
+    } catch {
+      clearInterval(pollTimer);
+      vidBtn.disabled = false;
+      vidStatus.textContent = "Lost connection while polling job status.";
+    }
+  }
+
+  // ---- Arena: one image, both methods ----
+  const arenaDrop = document.getElementById("arenaDrop");
+  const arenaInput = document.getElementById("arenaInput");
+  const arenaBtn = document.getElementById("arenaBtn");
+  const arenaStatus = document.getElementById("arenaStatus");
+  let arenaFile = null;
+
+  arenaDrop.addEventListener("click", () => arenaInput.click());
+  arenaDrop.addEventListener("dragover", e => { e.preventDefault(); arenaDrop.classList.add("dragover"); });
+  arenaDrop.addEventListener("dragleave", () => arenaDrop.classList.remove("dragover"));
+  arenaDrop.addEventListener("drop", e => {
+    e.preventDefault();
+    arenaDrop.classList.remove("dragover");
+    if (e.dataTransfer.files.length) loadArenaFile(e.dataTransfer.files[0]);
+  });
+  arenaInput.addEventListener("change", () => { if (arenaInput.files.length) loadArenaFile(arenaInput.files[0]); });
+
+  function loadArenaFile(file) {
+    if (!file.type.startsWith("image/")) { arenaStatus.textContent = "Please choose an image file."; return; }
+    arenaFile = file;
+    arenaBtn.disabled = false;
+    document.getElementById("arenaResults").classList.add("hidden");
+    arenaStatus.innerHTML = `Loaded <strong>${file.name}</strong> — pick a color above and run.`;
+  }
+
+  function describeDets(dets, color) {
+    if (!dets.length) return "No matches.";
+    return dets.map(d => {
+      const name = d.label || (d.confidence > 0 ? "object" : `region ${d.w}×${d.h}`);
+      const pct = d.confidence > 0 ? ` (${Math.round(d.confidence * 100)}%)` : "";
+      const src = d.source ? ` [${d.source}]` : "";
+      return `${color} ${name}${pct}${src}`;
+    }).join(" · ");
+  }
+
+  arenaBtn.addEventListener("click", async () => {
+    if (!arenaFile) return;
+    arenaBtn.disabled = true;
+    arenaStatus.textContent = "Running both methods…";
+    try {
+      const form = new FormData();
+      form.append("file", arenaFile);
+      form.append("color", selectedColor);
+      form.append("min_area", minArea.value);
+      const res = await fetch("/detect/arena", { method: "POST", body: form });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.detail || `Server error (${res.status})`);
+      }
+      const data = await res.json();
+      const panels = [["classical", "Classical"], ["ml", "Ml"], ["fusion", "Fusion"]];
+      for (const [key, id] of panels) {
+        const r2 = data[key];
+        document.getElementById(`arena${id}Img`).src = r2.annotated_image;
+        document.getElementById(`arena${id}Stats`).textContent = `${r2.count} found · ${r2.ms} ms`;
+        document.getElementById(`arena${id}Note`).textContent = describeDets(r2.detections, data.color);
+      }
+      document.getElementById("arenaResults").classList.remove("hidden");
+      const c = data.classical, m = data.ml, f = data.fusion;
+      arenaStatus.innerHTML =
+        `Classical <strong>${c.count}</strong> in ${c.ms} ms · ` +
+        `ML <strong>${m.count}</strong> in ${m.ms} ms · ` +
+        `Fusion <strong>${f.count}</strong> in ${f.ms} ms.`;
+    } catch (err) {
+      arenaStatus.textContent = "Error: " + err.message;
+    } finally {
+      arenaBtn.disabled = false;
+    }
+  });
+
+  // ---- Camera (getUserMedia -> WebSocket -> box overlay) ----
+  const camBtn = document.getElementById("camBtn");
+  const camCanvas = document.getElementById("camCanvas");
+  const camCtx = camCanvas.getContext("2d");
+  const camStats = document.getElementById("camStats");
+  const camVideo = document.createElement("video");
+  camVideo.muted = true;
+  camVideo.playsInline = true;
+  const captureCanvas = document.createElement("canvas");
+
+  let camStream = null, camWS = null, camRunning = false;
+  let awaitingReply = false, lastDets = [], sendTimer = null, rafId = null;
+
+  function sendCamConfig() {
+    if (camWS && camWS.readyState === WebSocket.OPEN) {
+      camWS.send(JSON.stringify({ color: selectedColor, min_area: +minArea.value, method: selectedMethod }));
+    }
+  }
+
+  async function startCam() {
+    try {
+      camStream = await navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 480 } });
+    } catch (err) {
+      camStats.textContent = "Could not access camera: " + err.message;
+      return;
+    }
+    camVideo.srcObject = camStream;
+    await camVideo.play();
+    camCanvas.width = captureCanvas.width = camVideo.videoWidth;
+    camCanvas.height = captureCanvas.height = camVideo.videoHeight;
+    camCanvas.classList.remove("hidden");
+
+    const proto = location.protocol === "https:" ? "wss" : "ws";
+    camWS = new WebSocket(`${proto}://${location.host}/ws/detect`);
+    camWS.onopen = () => {
+      sendCamConfig();
+      // Backpressure: only send a frame once the previous reply arrived,
+      // so slow processing can't build a queue of stale frames.
+      sendTimer = setInterval(() => {
+        if (!camRunning || awaitingReply || camWS.readyState !== WebSocket.OPEN) return;
+        const cctx = captureCanvas.getContext("2d");
+        cctx.save();
+        cctx.scale(-1, 1);  // mirror, so boxes match the mirrored display
+        cctx.drawImage(camVideo, -captureCanvas.width, 0);
+        cctx.restore();
+        captureCanvas.toBlob(blob => {
+          if (blob && camWS.readyState === WebSocket.OPEN) {
+            awaitingReply = true;
+            camWS.send(blob);
+          }
+        }, "image/jpeg", 0.7);
+      }, 80);
+    };
+    camWS.onmessage = e => {
+      awaitingReply = false;
+      const data = JSON.parse(e.data);
+      if (data.error) { camStats.textContent = "Error: " + data.error; return; }
+      lastDets = data.detections;
+      camStats.innerHTML = `<span class="live-dot"></span>Tracking <strong>${selectedColor}</strong> · ` +
+        `<strong>${data.count}</strong> object${data.count === 1 ? "" : "s"} · ` +
+        `<span class="mono">${data.ms} ms/frame</span>`;
+    };
+    camWS.onclose = () => { if (camRunning) camStats.textContent = "Connection closed."; };
+
+    camRunning = true;
+    camBtn.textContent = "Stop camera";
+    drawLoop();
+  }
+
+  function drawLoop() {
+    if (!camRunning) return;
+    camCtx.save();
+    camCtx.scale(-1, 1);
+    camCtx.drawImage(camVideo, -camCanvas.width, 0);
+    camCtx.restore();
+    camCtx.strokeStyle = "#00e676";
+    camCtx.fillStyle = "#00e676";
+    camCtx.lineWidth = 2;
+    camCtx.font = "13px 'JetBrains Mono', monospace";
+    for (const d of lastDets) {
+      camCtx.strokeRect(d.x, d.y, d.w, d.h);
+      const name = d.label || (d.confidence > 0 ? "object" : "");
+      const pct = d.confidence > 0 ? ` ${Math.round(d.confidence * 100)}%` : "";
+      const tag = `${selectedColor}${name ? " " + name : ""}${pct}`;
+      camCtx.fillText(tag, d.x + 4, Math.max(d.y - 6, 14));
+    }
+    rafId = requestAnimationFrame(drawLoop);
+  }
+
+  function stopCam() {
+    if (!camRunning) return;
+    camRunning = false;
+    clearInterval(sendTimer);
+    cancelAnimationFrame(rafId);
+    if (camWS) camWS.close();
+    if (camStream) camStream.getTracks().forEach(t => t.stop());
+    camWS = null; camStream = null; lastDets = []; awaitingReply = false;
+    camCanvas.classList.add("hidden");
+    camBtn.textContent = "Start camera";
+    camStats.textContent = "";
+  }
+
+  camBtn.addEventListener("click", () => camRunning ? stopCam() : startCam());
+</script>
+</body>
+</html>
