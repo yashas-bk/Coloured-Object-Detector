@@ -131,9 +131,21 @@ def detect_category_fusion(
     frame_bgr: np.ndarray,
     category: str,
     min_area: int = 500,
+    name_unknowns: bool = False,
+    extra_labels: list[str] | None = None,
 ) -> list[Detection]:
-    """Detect objects of a color category using both engines fused."""
+    """Detect objects of a color category using both engines fused.
+
+    With name_unknowns=True, classical-only detections (which YOLO couldn't
+    name) are labeled by CLIP zero-shot classification (~100 ms per unnamed
+    detection on CPU — intended for image endpoints, not live streams).
+    """
     classical, _ = detect_category(frame_bgr, category, min_area)
     ml = detect_category_ml(frame_bgr, category, min_area)
     h, w = frame_bgr.shape[:2]
-    return _fuse(classical, ml, w * h)
+    fused = _fuse(classical, ml, w * h)
+    if name_unknowns and any(not d.label for d in fused):
+        from .clip_namer import name_detections
+
+        name_detections(frame_bgr, fused, extra_labels)
+    return fused

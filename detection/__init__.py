@@ -7,6 +7,7 @@ from .color_detector import (
     detect_color,
     hex_to_bgr,
 )
+from .clip_namer import warm_up as warm_up_clip
 from .fusion import detect_category_fusion
 from .ml_detector import detect_category_ml, warm_up as warm_up_ml
 
@@ -20,5 +21,6 @@ __all__ = [
     "detect_category_ml",
     "detect_color",
     "hex_to_bgr",
+    "warm_up_clip",
     "warm_up_ml",
 ]

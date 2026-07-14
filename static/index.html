@@ -77,6 +77,15 @@
   }
   .slider-value { min-width: 44px; color: var(--muted); }
 
+  .text-input {
+    font-family: inherit; font-size: 13px;
+    background: var(--bg); color: var(--text);
+    border: 1px solid var(--border-strong); border-radius: 6px;
+    padding: 7px 10px; width: 220px;
+  }
+  .text-input::placeholder { color: var(--faint); }
+  .text-input:focus { outline: none; border-color: var(--ink); }
+
   .segmented {
     display: inline-flex; border: 1px solid var(--border-strong);
     border-radius: 6px; overflow: hidden;
@@ -193,6 +202,10 @@
         <input type="range" id="minArea" min="50" max="5000" step="50" value="500" />
         <span class="slider-value mono" id="minAreaVal">500px²</span>
       </div>
+    </div>
+    <div>
+      <label class="field-label">Custom labels <span class="swatch-name" style="text-transform:none">(for naming unknown objects)</span></label>
+      <input type="text" id="extraLabels" class="text-input" placeholder="e.g. lego brick, rubber duck" />
     </div>
     <div>
       <label class="field-label">Method</label>
@@ -347,6 +360,12 @@
   }
   minArea.addEventListener("change", () => sendCamConfig());
 
+  // ---- Custom labels (persisted locally) ----
+  const extraLabels = document.getElementById("extraLabels");
+  extraLabels.value = localStorage.getItem("extraLabels") || "";
+  extraLabels.addEventListener("change", () =>
+    localStorage.setItem("extraLabels", extraLabels.value));
+
   // ---- Method toggle ----
   let selectedMethod = "classical";
   document.querySelectorAll(".seg-btn").forEach(btn => {
@@ -446,6 +465,7 @@
       form.append("color", selectedColor);
       form.append("min_area", minArea.value);
       form.append("method", selectedMethod);
+      form.append("extra_labels", extraLabels.value);
       const res = await fetch("/detect/image", { method: "POST", body: form });
       if (!res.ok) {
         const err = await res.json().catch(() => ({}));
@@ -593,6 +613,7 @@
       form.append("file", arenaFile);
       form.append("color", selectedColor);
       form.append("min_area", minArea.value);
+      form.append("extra_labels", extraLabels.value);
       const res = await fetch("/detect/arena", { method: "POST", body: form });
       if (!res.ok) {
         const err = await res.json().catch(() => ({}));

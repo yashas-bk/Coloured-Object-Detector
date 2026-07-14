@@ -26,20 +26,33 @@ from detection import (
     detect_category_fusion,
     detect_category_ml,
     hex_to_bgr,
+    warm_up_clip,
     warm_up_ml,
 )
 
 METHODS = ("classical", "ml", "fusion")
 
 
-def _detect(frame, color: str, min_area: int, method: str):
-    """Dispatch to the requested engine; returns a list of Detections."""
+def _detect(frame, color: str, min_area: int, method: str,
+            name_unknowns: bool = False, extra_labels: list[str] | None = None):
+    """Dispatch to the requested engine; returns a list of Detections.
+
+    name_unknowns enables CLIP naming of unrecognized fusion detections —
+    only sensible on image endpoints (too slow for live streams / video).
+    """
     if method == "ml":
         return detect_category_ml(frame, color, min_area)
     if method == "fusion":
-        return detect_category_fusion(frame, color, min_area)
+        return detect_category_fusion(
+            frame, color, min_area,
+            name_unknowns=name_unknowns, extra_labels=extra_labels,
+        )
     detections, _ = detect_category(frame, color, min_area)
     return detections
+
+
+def _parse_labels(extra_labels: str) -> list[str]:
+    return [part.strip() for part in extra_labels.split(",") if part.strip()][:20]
 
 MAX_IMAGE_BYTES = 10 * 1024 * 1024  # 10 MB
 MAX_VIDEO_BYTES = 100 * 1024 * 1024  # 100 MB
@@ -56,9 +69,11 @@ app = FastAPI(title="Color Object Detector")
 
 
 @app.on_event("startup")
-async def _warm_ml_model():
-    # Load YOLO in the background so the first ML request doesn't stall ~10 s.
+async def _warm_models():
+    # Load YOLO and CLIP in the background so first requests don't stall
+    # (CLIP downloads ~350 MB on the very first run, then loads from cache).
     threading.Thread(target=warm_up_ml, daemon=True).start()
+    threading.Thread(target=warm_up_clip, daemon=True).start()
 
 
 @app.get("/colors")
@@ -78,13 +93,16 @@ async def classify(color: str):
 
 
 @app.post("/detect/image")
-async def detect_image(
+def detect_image(
     file: UploadFile = File(...),
     color: str = Form("yellow"),
     min_area: int = Form(500),
     method: str = Form("classical"),
+    extra_labels: str = Form(""),
 ):
-    data = await file.read()
+    """Sync endpoint on purpose: FastAPI runs it in a worker thread, so ML
+    inference and CLIP naming don't stall the event loop."""
+    data = file.file.read()
     if len(data) > MAX_IMAGE_BYTES:
         raise HTTPException(413, "Image too large (max 10 MB)")
 
@@ -98,7 +116,8 @@ async def detect_image(
         raise HTTPException(400, f"Unknown method: {method!r} (choose from {', '.join(METHODS)})")
 
     try:
-        detections = _detect(frame, color, min_area, method)
+        detections = _detect(frame, color, min_area, method,
+                             name_unknowns=True, extra_labels=_parse_labels(extra_labels))
     except ValueError as e:
         raise HTTPException(400, str(e))
 
@@ -122,6 +141,7 @@ def detect_arena(
     file: UploadFile = File(...),
     color: str = Form("yellow"),
     min_area: int = Form(500),
+    extra_labels: str = Form(""),
 ):
     """Run BOTH engines on the same image; returns per-method results + timing.
 
@@ -142,7 +162,8 @@ def detect_arena(
     out = {"color": color.lower()}
     for method in METHODS:
         t0 = time.perf_counter()
-        detections = _detect(frame, color, min_area, method)
+        detections = _detect(frame, color, min_area, method,
+                             name_unknowns=True, extra_labels=_parse_labels(extra_labels))
         ms = round((time.perf_counter() - t0) * 1000, 1)
         annotated = annotate(frame, detections, label=color.lower())
         ok, encoded = cv2.imencode(".jpg", annotated, [cv2.IMWRITE_JPEG_QUALITY, 90])

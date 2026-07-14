@@ -5,5 +5,6 @@ uvicorn[standard]
 python-multipart
 imageio-ffmpeg
 ultralytics
+open-clip-torch
 requests
 pytest
