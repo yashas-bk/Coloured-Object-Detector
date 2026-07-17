@@ -114,11 +114,16 @@ def _fuse(
             1.0 if frac <= LARGE_REGION_FRAC
             else max(0.15, 1.0 - (frac - LARGE_REGION_FRAC) * 2.5)
         )
+        # sqrt softens the solidity penalty: box solidity systematically
+        # underestimates non-rectangular objects (a head on a wider body
+        # tops out well below 1.0). Stringy artifacts (solidity <= ~0.13)
+        # still fall under MIN_CONFIDENCE.
         fused.append(
             Detection(
                 c.x, c.y, c.w, c.h, c.area,
-                confidence=0.7 * solidity * size_factor,
+                confidence=0.7 * solidity**0.5 * size_factor,
                 source="classical-only",
+                contours=c.contours,
             )
         )
 

@@ -32,6 +32,9 @@ MODEL_NAME = "ViT-B-32-quickgelu"
 PRETRAINED = "openai"
 PROMPT = "a photo of a {}"
 MIN_SIMILARITY = 0.22  # cosine; below this the crop stays unnamed
+# Image-to-image similarity (few-shot memory) runs far higher than
+# image-to-text, hence the separate, stricter threshold.
+MEMORY_MIN_SIMILARITY = 0.60
 CROP_PAD = 0.08  # expand the box slightly: CLIP likes a little context
 
 # RLock: _vocab_embeddings holds the lock while _embed_texts -> _load
@@ -98,13 +101,30 @@ def _embed_crop(crop_bgr: np.ndarray) -> np.ndarray:
     return emb.numpy().astype(np.float32)[0]
 
 
+def embed_bgr(image_bgr: np.ndarray) -> np.ndarray:
+    """Public, lock-serialised CLIP embedding of a BGR image (normalized)."""
+    with _lock:
+        return _embed_crop(image_bgr)
+
+
 def name_crop(
     crop_bgr: np.ndarray, extra_labels: list[str] | None = None
 ) -> tuple[str, float]:
-    """Best vocabulary match for a crop: (label, cosine similarity).
+    """Best name for a crop: (label, cosine similarity).
 
-    Returns ("", score) when nothing clears MIN_SIMILARITY.
+    Taught objects (few-shot memory) are checked first and win over the
+    text vocabulary when they clear MEMORY_MIN_SIMILARITY; otherwise the
+    best vocabulary match applies. Returns ("", score) when nothing clears
+    its threshold.
     """
+    img_emb = embed_bgr(crop_bgr)
+
+    from .object_memory import get_memory
+
+    mem_name, mem_score = get_memory().match(img_emb)
+    if mem_name and mem_score >= MEMORY_MIN_SIMILARITY:
+        return mem_name, mem_score
+
     labels = list(DEFAULT_VOCABULARY)
     bank = _vocab_embeddings()
     if extra_labels:
@@ -113,8 +133,6 @@ def name_crop(
             bank = np.vstack([bank, _embed_texts(extras)])
             labels += extras
 
-    with _lock:  # a single shared torch model; serialise inference
-        img_emb = _embed_crop(crop_bgr)
     sims = bank @ img_emb
     best = int(np.argmax(sims))
     score = float(sims[best])

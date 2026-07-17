@@ -98,6 +98,21 @@
   .seg-btn + .seg-btn { border-left: 1px solid var(--border-strong); }
   .seg-btn.active { background: var(--ink); color: var(--ink-contrast); }
 
+  .mem-chips { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; min-height: 33px; }
+  .mem-chip {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 12.5px; color: var(--text);
+    background: var(--surface); border: 1px solid var(--border-strong);
+    border-radius: 99px; padding: 4px 7px 4px 11px;
+  }
+  .mem-chip .count { color: var(--muted); }
+  .mem-chip button {
+    background: none; border: none; cursor: pointer;
+    color: var(--muted); font-size: 13px; line-height: 1; padding: 0 3px;
+  }
+  .mem-chip button:hover { color: var(--text); }
+  .mem-empty { color: var(--faint); font-size: 12.5px; }
+
   /* ---- Tabs ---- */
   .tabs { display: flex; gap: 28px; padding-top: 4px; }
   .tab {
@@ -208,6 +223,10 @@
       <input type="text" id="extraLabels" class="text-input" placeholder="e.g. lego brick, rubber duck" />
     </div>
     <div>
+      <label class="field-label">Taught objects <span class="swatch-name" style="text-transform:none">(teach from the Image tab)</span></label>
+      <div class="mem-chips" id="memChips"><span class="mem-empty">none taught yet</span></div>
+    </div>
+    <div>
       <label class="field-label">Method</label>
       <div class="segmented" id="methodToggle">
         <button class="seg-btn active" data-method="classical" title="HSV/LAB color analysis + contours — fast, finds any colored region">Classical CV</button>
@@ -238,6 +257,10 @@
       <div class="actions">
         <button class="btn secondary" id="eyedropBtn" title="Click a pixel in your image to match its color category">Pick color from image</button>
         <button class="btn" id="detectBtn" disabled>Detect objects</button>
+        <input type="text" id="teachName" class="text-input" style="width: 180px"
+               placeholder="name this object" title="Few-shot memory: teach the system this object under a name of your choice. Works best with a close-up where the object fills the frame." />
+        <button class="btn secondary" id="teachBtn" disabled
+                title="Store this image as an example — future detections that look like it get this name">Teach object</button>
       </div>
 
       <div class="preview-row">
@@ -419,6 +442,7 @@
       document.getElementById("srcCol").classList.remove("hidden");
       document.getElementById("resultCol").classList.add("hidden");
       detectBtn.disabled = false;
+      updateTeachBtn();
       statusEl.textContent = "Image loaded — choose a color and detect.";
       URL.revokeObjectURL(img.src);
     };
@@ -479,6 +503,72 @@
       statusEl.textContent = "Error: " + err.message;
     } finally {
       detectBtn.disabled = false;
+    }
+  });
+
+  // ---- Few-shot object memory ----
+  const memChips = document.getElementById("memChips");
+  const teachName = document.getElementById("teachName");
+  const teachBtn = document.getElementById("teachBtn");
+
+  function updateTeachBtn() {
+    teachBtn.disabled = !(currentFile && teachName.value.trim());
+  }
+  teachName.addEventListener("input", updateTeachBtn);
+
+  async function refreshMemory() {
+    try {
+      const items = await (await fetch("/memory")).json();
+      memChips.innerHTML = "";
+      if (!items.length) {
+        const empty = document.createElement("span");
+        empty.className = "mem-empty";
+        empty.textContent = "none taught yet";
+        memChips.appendChild(empty);
+        return;
+      }
+      items.forEach(({ name, examples }) => {
+        const chip = document.createElement("span");
+        chip.className = "mem-chip";
+        const label = document.createElement("span");
+        label.textContent = name;
+        const count = document.createElement("span");
+        count.className = "count mono";
+        count.textContent = "×" + examples;
+        const del = document.createElement("button");
+        del.textContent = "✕";
+        del.title = "Forget “" + name + "”";
+        del.addEventListener("click", async () => {
+          await fetch("/memory/" + encodeURIComponent(name), { method: "DELETE" });
+          refreshMemory();
+        });
+        chip.append(label, count, del);
+        memChips.appendChild(chip);
+      });
+    } catch { /* server still starting; chips refresh on next teach */ }
+  }
+  refreshMemory();
+
+  teachBtn.addEventListener("click", async () => {
+    if (!currentFile || !teachName.value.trim()) return;
+    teachBtn.disabled = true;
+    statusEl.textContent = "Teaching…";
+    try {
+      const form = new FormData();
+      form.append("file", currentFile);
+      form.append("name", teachName.value.trim());
+      const res = await fetch("/memory/teach", { method: "POST", body: form });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.detail || `Server error (${res.status})`);
+      }
+      const data = await res.json();
+      statusEl.textContent = `Learned "${data.name}" (${data.examples} example${data.examples === 1 ? "" : "s"}) — detections that look like it will now get this name.`;
+      refreshMemory();
+    } catch (err) {
+      statusEl.textContent = "Error: " + err.message;
+    } finally {
+      updateTeachBtn();
     }
   });
 

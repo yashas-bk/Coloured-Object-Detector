@@ -1,20 +1,11 @@
 {
   "image": "coco__2016_02_red_double_decker_bus_london_02.jpg",
-  "draft": true,
+  "draft": false,
   "tags": [
+    "dim-light",
     "outdoor"
   ],
   "objects": [
-    {
-      "box": [
-        602,
-        211,
-        333,
-        59
-      ],
-      "color": "red",
-      "coco": false
-    },
     {
       "box": [
         1156,
@@ -27,30 +18,10 @@
     },
     {
       "box": [
-        595,
-        346,
-        363,
-        442
-      ],
-      "color": "red",
-      "coco": false
-    },
-    {
-      "box": [
         914,
         228,
         48,
         27
-      ],
-      "color": "yellow",
-      "coco": false
-    },
-    {
-      "box": [
-        1204,
-        479,
-        51,
-        98
       ],
       "color": "yellow",
       "coco": false
@@ -254,6 +225,66 @@
       ],
       "color": "black",
       "coco": true
+    },
+    {
+      "box": [
+        52,
+        422,
+        204,
+        239
+      ],
+      "color": "red",
+      "coco": true
+    },
+    {
+      "box": [
+        483,
+        221,
+        476,
+        569
+      ],
+      "color": "red",
+      "coco": true
+    },
+    {
+      "box": [
+        720,
+        356,
+        88,
+        319
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        609,
+        261,
+        342,
+        102
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        615,
+        488,
+        328,
+        278
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        974,
+        492,
+        28,
+        54
+      ],
+      "color": "orange",
+      "coco": false
     }
   ]
 }

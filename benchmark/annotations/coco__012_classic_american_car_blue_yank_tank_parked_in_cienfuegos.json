@@ -1,5 +1,6 @@
 {
   "image": "coco__012_classic_american_car_blue_yank_tank_parked_in_cienfuegos.jpg",
+  "draft": false,
   "tags": [],
   "objects": [
     {
@@ -184,26 +185,6 @@
     },
     {
       "box": [
-        676,
-        4,
-        264,
-        77
-      ],
-      "color": "green",
-      "coco": false
-    },
-    {
-      "box": [
-        767,
-        87,
-        188,
-        124
-      ],
-      "color": "green",
-      "coco": false
-    },
-    {
-      "box": [
         352,
         1,
         36,
@@ -244,12 +225,12 @@
     },
     {
       "box": [
-        888,
-        215,
-        263,
-        62
+        672,
+        3,
+        278,
+        172
       ],
-      "color": "cyan",
+      "color": "green",
       "coco": false
     }
   ]

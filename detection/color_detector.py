@@ -16,7 +16,7 @@ Design decisions that matter:
   reunite them before results are reported.
 """
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 import cv2
 import numpy as np
@@ -76,6 +76,10 @@ class Detection:
     label: str = ""  # semantic class name (ML detections only)
     confidence: float = 0.0  # model confidence (ML detections only)
     source: str = ""  # fusion bucket: "agreement" | "classical-only" | "ml-only"
+    # Exact mask outlines (cv2 contours) this detection was built from;
+    # classical detections only. A merged detection carries one contour per
+    # fragment. Display-only: excluded from to_dict / the JSON API.
+    contours: list = field(default_factory=list, repr=False, compare=False)
 
     def to_dict(self):
         return {
@@ -170,8 +174,28 @@ def _category_mask(
     return keep.astype(np.uint8) * 255
 
 
+# One object cut by a horizontal occluder (water line, shadow band, strap)
+# leaves vertically stacked fragments whose x-ranges nest. Those merge across
+# a much larger gap than plain proximity allows. Deliberately asymmetric: two
+# DISTINCT objects usually sit side by side (gravity), almost never floating
+# one above the other, so the same generosity horizontally would glue
+# neighbours together.
+SPLIT_X_OVERLAP_FRAC = 0.8  # x-overlap required, fraction of the narrower box
+SPLIT_MAX_GAP_FRAC = 0.5    # vertical gap allowed, fraction of the shorter box
+
+
+def _vertical_split(a: Detection, b: Detection) -> bool:
+    """Do these boxes look like one object cut by a horizontal occluder?"""
+    x_overlap = min(a.x + a.w, b.x + b.w) - max(a.x, b.x)
+    if x_overlap < SPLIT_X_OVERLAP_FRAC * min(a.w, b.w):
+        return False
+    v_gap = max(a.y, b.y) - min(a.y + a.h, b.y + b.h)
+    return v_gap <= SPLIT_MAX_GAP_FRAC * min(a.h, b.h)
+
+
 def _merge_nearby(boxes: list[Detection], gap: int) -> list[Detection]:
-    """Union bounding boxes that overlap or sit within `gap` px of each other.
+    """Union bounding boxes that overlap or sit within `gap` px of each other,
+    plus vertically split fragments of one occluded object (_vertical_split).
 
     One object frequently yields several mask blobs; this reunites them.
     """
@@ -188,17 +212,27 @@ def _merge_nearby(boxes: list[Detection], gap: int) -> list[Detection]:
                     and m.x - gap < d.x + d.w
                     and d.y - gap < m.y + m.h
                     and m.y - gap < d.y + d.h
-                ):
+                ) or _vertical_split(d, m):
                     hit = m
                     break
             if hit is None:
-                merged.append(Detection(d.x, d.y, d.w, d.h, d.area))
+                merged.append(Detection(d.x, d.y, d.w, d.h, d.area,
+                                        contours=list(d.contours)))
             else:
+                # Fragments separated by an occluder: the object plausibly
+                # continues behind it, so credit the hidden band to the mask
+                # area — otherwise the merged box's solidity (used by fusion
+                # scoring) punishes the occlusion itself.
+                x_overlap = min(hit.x + hit.w, d.x + d.w) - max(hit.x, d.x)
+                v_gap = max(hit.y, d.y) - min(hit.y + hit.h, d.y + d.h)
+                if x_overlap > 0 and v_gap > 0:
+                    hit.area += x_overlap * v_gap
                 x1, y1 = min(hit.x, d.x), min(hit.y, d.y)
                 x2 = max(hit.x + hit.w, d.x + d.w)
                 y2 = max(hit.y + hit.h, d.y + d.h)
                 hit.x, hit.y, hit.w, hit.h = x1, y1, x2 - x1, y2 - y1
                 hit.area += d.area
+                hit.contours.extend(d.contours)
                 changed = True
         boxes = merged
     return boxes
@@ -221,7 +255,7 @@ def _mask_to_detections(mask: np.ndarray, min_area: int) -> tuple[list[Detection
         if area < 25:  # sub-speck; not even worth merging
             continue
         x, y, bw, bh = cv2.boundingRect(contour)
-        fragments.append(Detection(x, y, bw, bh, float(area)))
+        fragments.append(Detection(x, y, bw, bh, float(area), contours=[contour]))
 
     # Merge first, THEN apply min_area: fragments of one large object may each
     # be individually small.
@@ -291,10 +325,12 @@ def detect_color(
 def annotate(
     frame_bgr: np.ndarray, detections: list[Detection], label: str = "Object"
 ) -> np.ndarray:
-    """Draw green bounding boxes and labels. Returns a copy.
+    """Draw detection outlines and labels. Returns a copy.
 
-    ML detections carry their own class label + confidence; classical ones
-    fall back to the caller-supplied label (the color name).
+    Classical detections carry their exact mask contours and are outlined
+    with them (boxes cover neighbours when objects overlap); ML detections
+    only have boxes. Labels: ML detections carry their own class label +
+    confidence; classical ones fall back to the caller-supplied label.
     """
     out = frame_bgr.copy()
     for det in detections:
@@ -304,7 +340,10 @@ def annotate(
             text = f"{label} object {det.confidence:.0%}"
         else:
             text = label
-        cv2.rectangle(out, (det.x, det.y), (det.x + det.w, det.y + det.h), BOX_COLOR, 2)
+        if det.contours:
+            cv2.drawContours(out, det.contours, -1, BOX_COLOR, 2)
+        else:
+            cv2.rectangle(out, (det.x, det.y), (det.x + det.w, det.y + det.h), BOX_COLOR, 2)
         cv2.putText(
             out,
             text,

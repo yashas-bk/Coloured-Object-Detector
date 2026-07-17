@@ -1,6 +1,6 @@
 {
   "image": "coco__1961_cooper_t53_donington_park_2023_01.jpg",
-  "draft": true,
+  "draft": false,
   "tags": [
     "outdoor"
   ],
@@ -17,110 +17,10 @@
     },
     {
       "box": [
-        0,
-        84,
-        1280,
-        114
-      ],
-      "color": "yellow",
-      "coco": false
-    },
-    {
-      "box": [
-        0,
-        530,
-        1280,
-        270
-      ],
-      "color": "yellow",
-      "coco": false
-    },
-    {
-      "box": [
-        0,
-        434,
-        211,
-        14
-      ],
-      "color": "green",
-      "coco": false
-    },
-    {
-      "box": [
-        607,
-        764,
-        673,
-        36
-      ],
-      "color": "green",
-      "coco": false
-    },
-    {
-      "box": [
         922,
         439,
         358,
         18
-      ],
-      "color": "green",
-      "coco": false
-    },
-    {
-      "box": [
-        0,
-        528,
-        1280,
-        130
-      ],
-      "color": "green",
-      "coco": false
-    },
-    {
-      "box": [
-        785,
-        688,
-        495,
-        39
-      ],
-      "color": "green",
-      "coco": false
-    },
-    {
-      "box": [
-        287,
-        758,
-        291,
-        42
-      ],
-      "color": "green",
-      "coco": false
-    },
-    {
-      "box": [
-        513,
-        703,
-        149,
-        21
-      ],
-      "color": "green",
-      "coco": false
-    },
-    {
-      "box": [
-        0,
-        687,
-        241,
-        24
-      ],
-      "color": "green",
-      "coco": false
-    },
-    {
-      "box": [
-        1179,
-        101,
-        101,
-        31
       ],
       "color": "green",
       "coco": false
@@ -143,7 +43,7 @@
         63
       ],
       "color": "blue",
-      "coco": false
+      "coco": true
     },
     {
       "box": [
@@ -153,26 +53,6 @@
         124
       ],
       "color": "blue",
-      "coco": false
-    },
-    {
-      "box": [
-        158,
-        215,
-        932,
-        260
-      ],
-      "color": "white",
-      "coco": true
-    },
-    {
-      "box": [
-        158,
-        215,
-        932,
-        260
-      ],
-      "color": "black",
       "coco": true
     },
     {
@@ -187,22 +67,112 @@
     },
     {
       "box": [
-        1142,
-        486,
-        138,
-        34
+        1,
+        89,
+        1270,
+        91
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        196,
+        299,
+        161,
+        161
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        761,
+        306,
+        173,
+        158
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        0,
+        451,
+        1279,
+        83
       ],
       "color": "black",
       "coco": false
     },
     {
       "box": [
-        0,
-        483,
-        93,
-        28
+        4,
+        435,
+        200,
+        12
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        564,
+        355,
+        25,
+        62
       ],
       "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        537,
+        351,
+        83,
+        74
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        518,
+        226,
+        76,
+        76
+      ],
+      "color": "white",
+      "coco": true
+    },
+    {
+      "box": [
+        676,
+        347,
+        40,
+        20
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        1,
+        531,
+        1277,
+        266
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        1046,
+        376,
+        30,
+        44
+      ],
+      "color": "orange",
       "coco": false
     }
   ]

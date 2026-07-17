@@ -12,6 +12,9 @@ venv/
 # Annotations (the hand-labeled ground truth) and results ARE tracked.
 benchmark/images/
 
+# Few-shot object memory: per-user taught examples, not code
+object_memory.json
+
 # OS noise
 Thumbs.db
 .DS_Store

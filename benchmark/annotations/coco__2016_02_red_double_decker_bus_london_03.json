@@ -1,7 +1,8 @@
 {
   "image": "coco__2016_02_red_double_decker_bus_london_03.jpg",
-  "draft": true,
+  "draft": false,
   "tags": [
+    "dim-light",
     "outdoor"
   ],
   "objects": [
@@ -311,16 +312,6 @@
         563,
         29,
         48
-      ],
-      "color": "black",
-      "coco": true
-    },
-    {
-      "box": [
-        234,
-        150,
-        903,
-        701
       ],
       "color": "black",
       "coco": true

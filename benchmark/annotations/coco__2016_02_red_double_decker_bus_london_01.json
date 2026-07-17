@@ -1,50 +1,11 @@
 {
   "image": "coco__2016_02_red_double_decker_bus_london_01.jpg",
-  "draft": true,
+  "draft": false,
   "tags": [
+    "dim-light",
     "outdoor"
   ],
   "objects": [
-    {
-      "box": [
-        282,
-        579,
-        23,
-        48
-      ],
-      "color": "red",
-      "coco": false
-    },
-    {
-      "box": [
-        763,
-        250,
-        229,
-        37
-      ],
-      "color": "red",
-      "coco": false
-    },
-    {
-      "box": [
-        618,
-        227,
-        61,
-        27
-      ],
-      "color": "yellow",
-      "coco": false
-    },
-    {
-      "box": [
-        764,
-        745,
-        32,
-        34
-      ],
-      "color": "brown",
-      "coco": false
-    },
     {
       "box": [
         1187,
@@ -80,16 +41,6 @@
         756,
         823,
         75,
-        30
-      ],
-      "color": "brown",
-      "coco": false
-    },
-    {
-      "box": [
-        40,
-        546,
-        56,
         30
       ],
       "color": "brown",
@@ -153,16 +104,6 @@
         83
       ],
       "color": "blue",
-      "coco": false
-    },
-    {
-      "box": [
-        819,
-        604,
-        52,
-        169
-      ],
-      "color": "pink",
       "coco": false
     },
     {
@@ -274,6 +215,96 @@
       ],
       "color": "black",
       "coco": true
+    },
+    {
+      "box": [
+        771,
+        755,
+        24,
+        20
+      ],
+      "color": "orange",
+      "coco": false
+    },
+    {
+      "box": [
+        175,
+        401,
+        177,
+        271
+      ],
+      "color": "red",
+      "coco": true
+    },
+    {
+      "box": [
+        528,
+        241,
+        549,
+        527
+      ],
+      "color": "red",
+      "coco": true
+    },
+    {
+      "box": [
+        41,
+        541,
+        39,
+        38
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        455,
+        543,
+        57,
+        9
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        496,
+        574,
+        36,
+        12
+      ],
+      "color": "yellow",
+      "coco": false
+    },
+    {
+      "box": [
+        795,
+        515,
+        69,
+        150
+      ],
+      "color": "red",
+      "coco": false
+    },
+    {
+      "box": [
+        457,
+        503,
+        71,
+        32
+      ],
+      "color": "cyan",
+      "coco": false
+    },
+    {
+      "box": [
+        372,
+        567,
+        60,
+        57
+      ],
+      "color": "blue",
+      "coco": false
     }
   ]
 }

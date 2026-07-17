@@ -1,56 +1,16 @@
 {
   "image": "coco__1959_holden_fc_sedan_taxi_yellow_cab_co_9598836628.jpg",
-  "draft": true,
+  "draft": false,
   "tags": [
     "outdoor"
   ],
   "objects": [
     {
       "box": [
-        138,
-        299,
-        721,
-        368
-      ],
-      "color": "brown",
-      "coco": false
-    },
-    {
-      "box": [
-        1,
-        0,
-        517,
-        482
-      ],
-      "color": "green",
-      "coco": true
-    },
-    {
-      "box": [
-        0,
-        176,
-        485,
-        285
-      ],
-      "color": "cyan",
-      "coco": false
-    },
-    {
-      "box": [
         823,
         149,
         89,
         42
-      ],
-      "color": "blue",
-      "coco": false
-    },
-    {
-      "box": [
-        250,
-        295,
-        57,
-        19
       ],
       "color": "blue",
       "coco": false
@@ -77,16 +37,6 @@
     },
     {
       "box": [
-        1,
-        0,
-        517,
-        482
-      ],
-      "color": "white",
-      "coco": true
-    },
-    {
-      "box": [
         0,
         75,
         25,
@@ -107,22 +57,62 @@
     },
     {
       "box": [
-        118,
-        126,
-        1044,
-        609
-      ],
-      "color": "black",
-      "coco": true
-    },
-    {
-      "box": [
         1247,
         219,
         33,
         51
       ],
       "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        0,
+        175,
+        452,
+        280
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        698,
+        510,
+        141,
+        209
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        1074,
+        383,
+        64,
+        129
+      ],
+      "color": "black",
+      "coco": true
+    },
+    {
+      "box": [
+        153,
+        120,
+        1014,
+        629
+      ],
+      "color": "orange",
+      "coco": true
+    },
+    {
+      "box": [
+        0,
+        4,
+        511,
+        169
+      ],
+      "color": "white",
       "coco": false
     }
   ]

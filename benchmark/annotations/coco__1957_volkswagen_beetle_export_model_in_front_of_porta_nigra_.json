@@ -1,5 +1,6 @@
 {
   "image": "coco__1957_volkswagen_beetle_export_model_in_front_of_porta_nigra_.jpg",
+  "draft": false,
   "tags": [],
   "objects": [
     {
@@ -100,7 +101,7 @@
         112
       ],
       "color": "green",
-      "coco": false
+      "coco": true
     },
     {
       "box": [
@@ -110,7 +111,7 @@
         108
       ],
       "color": "green",
-      "coco": false
+      "coco": true
     },
     {
       "box": [

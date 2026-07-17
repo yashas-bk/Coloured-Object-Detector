@@ -75,6 +75,18 @@ def test_blob_split_by_two_yolo_boxes():
     assert sorted(d.source for d in fused) == ["agreement", "ml-only"]
 
 
+def test_occlusion_merged_object_survives():
+    """Regression (rubber-duck-in-water photo): one object whose merged box
+    includes the occluder band — moderate solidity (~0.4), ~26% of frame.
+    Suppressing it means fusion finds nothing where classical succeeds."""
+    frame_area = 643 * 479
+    duck = det(160, 90, 254, 305, area=0.42 * 254 * 305)
+    fused = _fuse([duck], [], frame_area)
+    assert len(fused) == 1
+    assert fused[0].source == "classical-only"
+    assert fused[0].confidence >= MIN_CONFIDENCE
+
+
 # ---- false-positive suppression ----
 
 def test_wall_sized_region_suppressed():

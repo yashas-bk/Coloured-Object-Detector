@@ -80,6 +80,37 @@ def test_fragmented_object_single_box():
     assert d.x <= 105 and d.x + d.w >= 295  # spans the full object
 
 
+def test_object_split_by_horizontal_occluder_single_box():
+    """A water line / shadow band across an object cuts its mask into two
+    stacked blobs too far apart for plain proximity merging (the rubber-duck
+    photo). Nested x-ranges + small vertical gap must reunite them."""
+    img = scene((120, 80, 200, 120, (0, 230, 230)))   # head/top part
+    img[200:240, 0:400] = (200, 120, 30)              # blue "water" band
+    img[240:340, 100:340] = (0, 230, 230)             # body/bottom part
+    detections, _ = detect_category(img, "yellow")
+    assert len(detections) == 1
+    d = detections[0]
+    assert d.y <= 85 and d.y + d.h >= 335  # spans head through body
+
+
+def test_side_by_side_objects_stay_separate():
+    """Two distinct objects sitting next to each other must NOT be glued
+    together by the occlusion-split rule (it only applies vertically)."""
+    img = scene((60, 150, 120, 120, (0, 230, 230)),
+                (240, 150, 120, 120, (0, 230, 230)))
+    detections, _ = detect_category(img, "yellow")
+    assert len(detections) == 2
+
+
+def test_vertically_distant_objects_stay_separate():
+    """Stacked boxes merge only across small gaps relative to their size;
+    a shelf-like arrangement with a wide gap stays two objects."""
+    img = scene((100, 40, 200, 100, (0, 230, 230)),
+                (100, 260, 200, 100, (0, 230, 230)))  # gap 120 > 50% of 100
+    detections, _ = detect_category(img, "yellow")
+    assert len(detections) == 2
+
+
 def test_noise_specks_not_merged_into_phantoms():
     img = scene()
     rng = np.random.default_rng(42)
@@ -88,6 +119,28 @@ def test_noise_specks_not_merged_into_phantoms():
         img[y : y + 3, x : x + 3] = (0, 230, 230)
     detections, _ = detect_category(img, "yellow")
     assert detections == []
+
+
+# ---- exact-shape outlines ----
+
+def test_detections_carry_contours():
+    detections, _ = detect_category(scene((50, 50, 100, 100, (0, 230, 230))), "yellow")
+    assert len(detections) == 1
+    assert len(detections[0].contours) >= 1
+
+
+def test_merged_detection_carries_all_fragment_contours():
+    img = scene((120, 80, 200, 120, (0, 230, 230)))
+    img[200:240, 0:400] = (200, 120, 30)
+    img[240:340, 100:340] = (0, 230, 230)
+    detections, _ = detect_category(img, "yellow")
+    assert len(detections) == 1
+    assert len(detections[0].contours) == 2  # head + body fragments
+
+
+def test_contours_not_in_api_dict():
+    detections, _ = detect_category(scene((50, 50, 100, 100, (0, 230, 230))), "yellow")
+    assert "contours" not in detections[0].to_dict()
 
 
 # ---- regression: muted colors are colors, not achromatic ----

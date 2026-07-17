@@ -1,6 +1,6 @@
 {
   "image": "coco__1959_holden_fc_sedan_taxi_yellow_cab_co_9596048105.jpg",
-  "draft": true,
+  "draft": false,
   "tags": [
     "outdoor"
   ],
@@ -37,16 +37,6 @@
     },
     {
       "box": [
-        55,
-        154,
-        1161,
-        732
-      ],
-      "color": "brown",
-      "coco": true
-    },
-    {
-      "box": [
         351,
         230,
         23,
@@ -54,16 +44,6 @@
       ],
       "color": "green",
       "coco": false
-    },
-    {
-      "box": [
-        285,
-        0,
-        995,
-        452
-      ],
-      "color": "cyan",
-      "coco": true
     },
     {
       "box": [
@@ -77,33 +57,113 @@
     },
     {
       "box": [
-        516,
-        137,
-        85,
-        29
+        729,
+        200,
+        546,
+        197
       ],
-      "color": "blue",
+      "color": "green",
+      "coco": true
+    },
+    {
+      "box": [
+        513,
+        135,
+        94,
+        39
+      ],
+      "color": "black",
       "coco": false
     },
     {
       "box": [
-        285,
-        0,
-        995,
-        452
+        88,
+        169,
+        1138,
+        713
+      ],
+      "color": "orange",
+      "coco": true
+    },
+    {
+      "box": [
+        508,
+        665,
+        111,
+        170
+      ],
+      "color": "orange",
+      "coco": true
+    },
+    {
+      "box": [
+        137,
+        456,
+        42,
+        108
+      ],
+      "color": "orange",
+      "coco": true
+    },
+    {
+      "box": [
+        1003,
+        695,
+        103,
+        44
+      ],
+      "color": "white",
+      "coco": false
+    },
+    {
+      "box": [
+        69,
+        275,
+        24,
+        67
+      ],
+      "color": "orange",
+      "coco": true
+    },
+    {
+      "box": [
+        331,
+        11,
+        936,
+        172
       ],
       "color": "white",
       "coco": true
     },
     {
       "box": [
-        55,
-        154,
-        1161,
-        732
+        189,
+        101,
+        40,
+        35
       ],
-      "color": "black",
-      "coco": true
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        268,
+        111,
+        35,
+        22
+      ],
+      "color": "green",
+      "coco": false
+    },
+    {
+      "box": [
+        10,
+        3,
+        321,
+        154
+      ],
+      "color": "white",
+      "coco": false
     }
   ]
 }

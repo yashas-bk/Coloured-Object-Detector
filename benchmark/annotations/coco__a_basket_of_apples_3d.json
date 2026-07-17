@@ -1,6 +1,6 @@
 {
   "image": "coco__a_basket_of_apples_3d.jpg",
-  "draft": true,
+  "draft": false,
   "tags": [
     "outdoor"
   ],
@@ -57,20 +57,90 @@
     },
     {
       "box": [
-        109,
-        106,
-        99,
-        337
+        373,
+        386,
+        180,
+        176
+      ],
+      "color": "white",
+      "coco": true
+    },
+    {
+      "box": [
+        556,
+        362,
+        228,
+        195
+      ],
+      "color": "white",
+      "coco": true
+    },
+    {
+      "box": [
+        413,
+        97,
+        199,
+        100
+      ],
+      "color": "white",
+      "coco": true
+    },
+    {
+      "box": [
+        41,
+        75,
+        157,
+        506
       ],
       "color": "black",
       "coco": false
     },
     {
       "box": [
-        785,
-        207,
-        95,
-        357
+        118,
+        79,
+        51,
+        203
+      ],
+      "color": "cyan",
+      "coco": false
+    },
+    {
+      "box": [
+        826,
+        77,
+        57,
+        227
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        621,
+        71,
+        75,
+        122
+      ],
+      "color": "pink",
+      "coco": false
+    },
+    {
+      "box": [
+        844,
+        73,
+        62,
+        510
+      ],
+      "color": "black",
+      "coco": false
+    },
+    {
+      "box": [
+        70,
+        549,
+        830,
+        50
       ],
       "color": "black",
       "coco": false

@@ -366,6 +366,45 @@ async def ws_detect(ws: WebSocket):
         pass
 
 
+# ---- Few-shot object memory ----
+
+from detection.clip_namer import embed_bgr  # noqa: E402
+from detection.object_memory import get_memory  # noqa: E402
+
+
+@app.get("/memory")
+async def memory_list():
+    """Taught objects and how many examples each has."""
+    return get_memory().summary()
+
+
+@app.post("/memory/teach")
+def memory_teach(file: UploadFile = File(...), name: str = Form(...)):
+    """Store the uploaded image's CLIP embedding as an example of `name`.
+
+    Sync endpoint: embedding runs the CLIP image encoder (~100 ms, plus
+    model load on the very first call).
+    """
+    data = file.file.read()
+    if len(data) > MAX_IMAGE_BYTES:
+        raise HTTPException(413, "Image too large (max 10 MB)")
+    frame = cv2.imdecode(np.frombuffer(data, dtype=np.uint8), cv2.IMREAD_COLOR)
+    if frame is None:
+        raise HTTPException(400, "Could not decode image — is it a valid image file?")
+    try:
+        count = get_memory().teach(name, embed_bgr(frame))
+    except ValueError as e:
+        raise HTTPException(400, str(e))
+    return {"name": " ".join(name.split()), "examples": count}
+
+
+@app.delete("/memory/{name}")
+async def memory_forget(name: str):
+    if not get_memory().forget(name):
+        raise HTTPException(404, f"No taught object named {name!r}")
+    return {"forgot": name}
+
+
 # ---- Benchmark / labeling ----
 
 BENCH_DIR = Path(__file__).resolve().parent.parent / "benchmark"
